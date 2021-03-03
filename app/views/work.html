@@ -16,42 +16,161 @@
             </h1>
           </legend>
 
-          <div class="govuk-radios govuk-radios">
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
             <!-- Option 1 -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="covid-letter"
-              name="covid-letter" type="radio" value="yes"​ {{ checked(
-              "covid-letter", "yes" ) }}​>
-              <label class="govuk-label govuk-radios__label" for="changed-name">
+              <input class="govuk-radios__input" id="work-duration" name="work-duration" type="radio" value="yes" ​ {{
+                checked( "work-duration" , "yes" ) }} data-aria-controls="conditional-work">
+              <label class="govuk-label govuk-radios__label" for="work-duration">
                 More than 6 weeks
               </label>
             </div>
 
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                  <legend class="govuk-fieldset__legend">Work start date</legend>
+                  <div id="passport-issued-hint" class="govuk-hint">
+                    For example, 31 3 1980
+                  </div>
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                          name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric" />
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                          id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*"
+                          inputmode="numeric" />
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                          id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*"
+                          inputmode="numeric" />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+
             <!-- Option 2 -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="covid-letter-2"
-              name="covid-letter" type="radio" value="no"​ {{ checked(
-              "covid-letter", "no" ) }}>
-              <label
-                class="govuk-label govuk-radios__label"
-                for="changed-name-2"
-              >
+              <input class="govuk-radios__input" id="work-duration-2" name="work-duration" type="radio" value="no" ​ {{
+                checked( "work-duration" , "no" ) }} data-aria-controls="conditional-work-2">
+              <label class="govuk-label govuk-radios__label" for="work-duration-2">
                 Less than 6 weeks
               </label>
             </div>
 
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-2">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                  <legend class="govuk-fieldset__legend">Work start date</legend>
+                  <div id="passport-issued-hint" class="govuk-hint">
+                    For example, 31 3 1980
+                  </div>
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                          name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric" />
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                          id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*"
+                          inputmode="numeric" />
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                          id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*"
+                          inputmode="numeric" />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+
             <!-- Option 3 -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="covid-letter-2"
-              name="covid-letter" type="radio" value="no"​ {{ checked(
-              "covid-letter", "no" ) }}>
-              <label
-                class="govuk-label govuk-radios__label"
-                for="changed-name-2"
-              >
+              <input class="govuk-radios__input" id="covid-letter-3" name="work-duration" type="radio" value="no" ​ {{
+                checked( "work-duration" , "no" ) }} data-aria-controls="conditional-work-3">
+              <label class="govuk-label govuk-radios__label" for="work-duration-3">
                 You have not started yet
               </label>
             </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-3">
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                  <legend class="govuk-fieldset__legend">Work start date</legend>
+                  <div id="passport-issued-hint" class="govuk-hint">
+                    For example, 31 3 1980
+                  </div>
+                  <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day"
+                          name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric" />
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                          id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*"
+                          inputmode="numeric" />
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                          id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*"
+                          inputmode="numeric" />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+
           </div>
         </fieldset>
       </div>
@@ -60,24 +179,14 @@
         <label class="govuk-label" for="days-a-week">
           How many days a week do you usually work?
         </label>
-        <input
-          class="govuk-input govuk-input--width-2"
-          id="days-a-week"
-          name="days-a-week"
-          type="text"
-        />
+        <input class="govuk-input govuk-input--width-2" id="days-a-week" name="days-a-week" type="text" />
       </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="hours-a-week">
           How many hours a week do you usually work?
         </label>
-        <input
-          class="govuk-input govuk-input--width-3"
-          id="hours-a-week"
-          name="hours-a-week"
-          type="text"
-        />
+        <input class="govuk-input govuk-input--width-3" id="hours-a-week" name="hours-a-week" type="text" />
       </div>
       <!-- Question END -->
 
