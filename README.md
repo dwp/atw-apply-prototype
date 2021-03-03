@@ -3,4 +3,4 @@ These are the latest prototypes for the application journey that citizens follow
 
 
 ## Prototypes
-[Full application journey](https://atw-apply-prototype.herokuapp.com/)
+[Citizen application prototype](https://atw-apply-prototype.herokuapp.com/)
