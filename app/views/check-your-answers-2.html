@@ -1,150 +1,151 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Check your answers
+Check your answers
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <script type="text/javascript">
   var bob = "this";
-  var questions = [{ title: "foo"}, { title: "bar"}, { title: "boo"}, { title: "far"}];
+  var questions = [{ title: "foo" }, { title: "bar" }, { title: "boo" }, { title: "far" }];
 </script>
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+    <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
 
-      <!-- Answers START -->
+    <!-- Answers START -->
 
-      <!-- Section 1: Personal details -->
-      <h2 class="govuk-heading-m">Your conditions or disabilities</h2>
+    <!-- Section 1: Personal details -->
+    <h2 class="govuk-heading-m">Your conditions or disabilities</h2>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        
-        <!-- Question -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            <script type="text/javascript">document.write(bob)</script>
-          </dt>
-          <dd class="govuk-summary-list__value">
-            ​{{ data['data'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> question</span>
-            </a>
-          </dd>
-        </div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-      </dl>
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <script type="text/javascript">document.write(bob)</script>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ​{{ data['data'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> question</span>
+          </a>
+        </dd>
+      </div>
 
-      <!-- Section END -->
+    </dl>
 
-      <!-- Section 2: Your conditions or disabilities -->
-      <h2 class="govuk-heading-m">What support you are applying for</h2>
+    <!-- Section END -->
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        
-        {% for question in questions %}
-        <!-- Question -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            {{ question.title }}
-          </dt>
-          <dd class="govuk-summary-list__value">
-            ​{{ data['data'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> question</span>
-            </a>
-          </dd>
-        </div>
+    <!-- Section 2: Your conditions or disabilities -->
+    <h2 class="govuk-heading-m">What support you are applying for</h2>
 
-        {% else %}
-        <!-- Question -->
-        <p>There are no questions</p>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-        {% endfor %}
+      {% for question in questions %}
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          {{ question.title }}
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ​{{ data['data'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> question</span>
+          </a>
+        </dd>
+      </div>
 
-      </dl>
+      {% else %}
+      <!-- Question -->
+      <p>There are no questions</p>
 
-      <!-- Section END -->
+      {% endfor %}
 
-      <!-- Section 3: Your employment details -->
-      <h2 class="govuk-heading-m">What support you are applying for</h2>
+    </dl>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        
-        <!-- Question -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Question
-          </dt>
-          <dd class="govuk-summary-list__value">
-            ​{{ data['data'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> question</span>
-            </a>
-          </dd>
-        </div>
+    <!-- Section END -->
 
-      </dl>
+    <!-- Section 3: Your employment details -->
+    <h2 class="govuk-heading-m">What support you are applying for</h2>
 
-      <!-- Section END -->
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-      <!-- Section 4: Your personal details -->
-      <h2 class="govuk-heading-m">What support you are applying for</h2>
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Question
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ​{{ data['data'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> question</span>
+          </a>
+        </dd>
+      </div>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        
-        <!-- Question -->
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Question
-          </dt>
-          <dd class="govuk-summary-list__value">
-            ​{{ data['data'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> question</span>
-            </a>
-          </dd>
-        </div>
+    </dl>
 
-      </dl>
+    <!-- Section END -->
 
-      <!-- Section END -->
+    <!-- Section 4: Your personal details -->
+    <h2 class="govuk-heading-m">What support you are applying for</h2>
 
-      <!-- Answers END -->
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-      <h2 class="govuk-heading-m">Now send your application</h2>
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Question
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ​{{ data['data'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> question</span>
+          </a>
+        </dd>
+      </div>
 
-      <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+    </dl>
 
-      <form action="/confirmation" method="post" novalidate>
+    <!-- Section END -->
 
-        <input type="hidden" name="answers-checked" value="true">
+    <!-- Answers END -->
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Accept and send
-        </button>
+    <h2 class="govuk-heading-m">Now send your application</h2>
 
-      </form>
+    <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are
+      providing are correct.</p>
 
-    </div>
+    <form action="/declaration" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Accept and send
+      </button>
+
+    </form>
+
   </div>
+</div>
 {% endblock %}

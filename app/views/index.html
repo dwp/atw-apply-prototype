@@ -1,40 +1,35 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Access to Work<br />
+      Prototypes
+      <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+    </h1>
+    <!-- {{releaseVersion | log }} -->
+    <p>
+      These are the latest prototypes for the application journey that citizens follow to apply for Access to Work
+      benefits.
+    </p>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+    <h2 class="govuk-heading-m">Prototypes</h2>
 
-      <h2 class="govuk-heading-m">Access to Work prototypes</h2>
-      
-      <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-8">
-        <li>
-          <a href="/start.html">Check your answers prototype</a>
-        </li>
-      </ul>
+    <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-9">
+      <li>
+        <a href="/start.html">Full application journey</a>
+      </li>
+    </ul>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+    <div class="govuk-!-padding-top-9">
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
+      <p>For reference only:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>
@@ -45,6 +40,8 @@
         </li>
       </ul>
     </div>
+
   </div>
+</div>
 
 {% endblock %}
