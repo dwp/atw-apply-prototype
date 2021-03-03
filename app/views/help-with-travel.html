@@ -1,0 +1,160 @@
+{% extends "layout.html" %} {% block pageTitle %} Question page {% endblock %}
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/work-impact" method="post">
+      <!-- Radios -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="travel-help-hint">
+          <!-- Question -->
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do you want some help to get to work?
+            </h1>
+          </legend>
+
+          <div
+            class="govuk-radios govuk-radios--conditional"
+            data-module="govuk-radios"
+          >
+            <!-- Option 1-->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="travel-help"
+              name="travel-help" type="radio" value="yes" ​ {{ checked(
+              "travel-help" , "yes" ) }}​
+              data-aria-controls="conditional-travel-help">
+              <label class="govuk-label govuk-radios__label" for="travel-help">
+                Yes I want help
+              </label>
+            </div>
+
+            <!-- Option 1 options -->
+            <div
+              class="govuk-radios__conditional govuk-radios__conditional--hidden"
+              id="conditional-travel-help"
+            >
+              <div class="govuk-form-group">
+                <fieldset
+                  class="govuk-fieldset"
+                  aria-describedby="travel-help-options-hint"
+                >
+                  <legend
+                    class="govuk-fieldset__legend govuk-fieldset__legend--s"
+                  >
+                    How do you get to work at the moment?
+                  </legend>
+                  <div id="travel-help-options-hint" class="govuk-hint">
+                    Tick all that apply.
+                  </div>
+
+                  <div class="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input
+                        class="govuk-checkboxes__input"
+                        id="travel-help-options"
+                        name="travel-help-options"
+                        type="checkbox"
+                        value="car-lift-taxi"
+                      />
+                      <label
+                        class="govuk-label govuk-checkboxes__label"
+                        for="travel-help-options"
+                      >
+                        Car, lift or taxi
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input
+                        class="govuk-checkboxes__input"
+                        id="travel-help-options-2"
+                        name="travel-help-options"
+                        type="checkbox"
+                        value="bus-tram"
+                      />
+                      <label
+                        class="govuk-label govuk-checkboxes__label"
+                        for="travel-help-options-2"
+                      >
+                        Bus or tram
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input
+                        class="govuk-checkboxes__input"
+                        id="travel-help-options-3"
+                        name="travel-help-options"
+                        type="checkbox"
+                        value="walk-cycle"
+                      />
+                      <label
+                        class="govuk-label govuk-checkboxes__label"
+                        for="travel-help-options-3"
+                      >
+                        Walking or cycling
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input
+                        class="govuk-checkboxes__input"
+                        id="travel-help-options-4"
+                        name="travel-help-options"
+                        type="checkbox"
+                        value="train-tube"
+                      />
+                      <label
+                        class="govuk-label govuk-checkboxes__label"
+                        for="travel-help-options-4"
+                      >
+                        Train or tube
+                      </label>
+                    </div>
+
+                    <div class="govuk-checkboxes__item">
+                      <input
+                        class="govuk-checkboxes__input"
+                        id="travel-help-options-5"
+                        name="travel-help-options"
+                        type="checkbox"
+                        value="other"
+                      />
+                      <label
+                        class="govuk-label govuk-checkboxes__label"
+                        for="travel-help-options-5"
+                      >
+                        Something else
+                      </label>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+
+            <!-- Option 2-->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="travel-help-2"
+              name="travel-help" type="radio" value="no" ​ {{ checked(
+              "travel-help" , "no" ) }}>
+              <label
+                class="govuk-label govuk-radios__label"
+                for="travel-help-2"
+              >
+                No, I can get to work ok
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <!-- Question END -->
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

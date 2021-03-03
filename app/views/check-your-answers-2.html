@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript">
+  var bob = "this";
+  var questions = [{ title: "foo"}, { title: "bar"}, { title: "boo"}, { title: "far"}];
+</script>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+      <!-- Answers START -->
+
+      <!-- Section 1: Personal details -->
+      <h2 class="govuk-heading-m">Your conditions or disabilities</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+        <!-- Question -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <script type="text/javascript">document.write(bob)</script>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ​{{ data['data'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> question</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- Section END -->
+
+      <!-- Section 2: Your conditions or disabilities -->
+      <h2 class="govuk-heading-m">What support you are applying for</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+        {% for question in questions %}
+        <!-- Question -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            {{ question.title }}
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ​{{ data['data'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> question</span>
+            </a>
+          </dd>
+        </div>
+
+        {% else %}
+        <!-- Question -->
+        <p>There are no questions</p>
+
+        {% endfor %}
+
+      </dl>
+
+      <!-- Section END -->
+
+      <!-- Section 3: Your employment details -->
+      <h2 class="govuk-heading-m">What support you are applying for</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+        <!-- Question -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Question
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ​{{ data['data'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> question</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- Section END -->
+
+      <!-- Section 4: Your personal details -->
+      <h2 class="govuk-heading-m">What support you are applying for</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        
+        <!-- Question -->
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Question
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ​{{ data['data'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="#">
+              Change
+              <span class="govuk-visually-hidden"> question</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <!-- Section END -->
+
+      <!-- Answers END -->
+
+      <h2 class="govuk-heading-m">Now send your application</h2>
+
+      <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

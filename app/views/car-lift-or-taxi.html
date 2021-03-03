@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- Question START -->
+      <form class="form" action="/condition" method="post">
+
+        <div class="govuk-form-group">
+          <p class="govuk-body">Why can't you carry on using your car, getting a lift or a taxi?</p>
+
+          <!-- Text input -->
+          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
+
+        <div class="govuk-form-group">
+          <p class="govuk-body">How often does your work travel include using your car, getting a lift or a taxi?</p>
+          <span class="govuk-hint">Count each journey separately, eg if you go to and from work the same way that would be 2 journeys a day</span>
+
+          <!-- Text input -->
+          <input class="govuk-input" id="condition" name="condition" type="text" value="{{ data['condition'] }}">
+      </div>
+
+
+        <p class="govuk-body">times</p>
+
+        <!-- Radios -->
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+            <div class="govuk-radios govuk-radios">
+
+              <!-- Option 1-->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="covid-letter" name="covid-letter" type="radio" value="yes"​ {{ checked( "covid-letter", "yes" ) }}​>
+                <label class="govuk-label govuk-radios__label" for="changed-name">
+                  a week
+                </label>
+              </div>
+              
+              <!-- Option 2-->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="covid-letter-2" name="covid-letter" type="radio" value="no"​ {{ checked( "covid-letter", "no" ) }}>
+                <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                  a month
+                </label>
+              </div>
+            </div>
+        
+          </fieldset>
+        </div>
+        <!-- Question END -->
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

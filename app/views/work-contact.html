@@ -1,0 +1,86 @@
+{% extends "layout.html" %} {% block pageTitle %} Question page {% endblock %}
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="/personal-details" method="post">
+      <!-- Question -->
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">Your workplace contact</h1>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1"> Their name </label>
+        <input
+          class="govuk-input govuk-!-width-one-half"
+          id="address-line-1"
+          name="address-line-1"
+          type="text"
+        />
+      </div>
+      
+      <p>
+        This should be someone who can authorise payment for the items and services in your support offer.
+      </p>
+
+<p>
+  We won't contact them until we've spoken to you first.
+</p>
+
+      <!-- Contact details -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="event-name">
+            How can we contact them?
+            </label>
+          </h1>
+          <div id="event-name-hint" class="govuk-hint">
+            Select as many as you like:
+          </div>
+          
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="travel-help-options"
+                name="travel-help-options"
+                type="checkbox"
+                value="car-lift-taxi"
+              />
+              <label
+                class="govuk-label govuk-checkboxes__label"
+                for="travel-help-options"
+              >
+                Email
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="travel-help-options-2"
+                name="travel-help-options"
+                type="checkbox"
+                value="bus-tram"
+              />
+              <label
+                class="govuk-label govuk-checkboxes__label"
+                for="travel-help-options-2"
+              >
+                Phone
+              </label>
+            </div>
+
+        </fieldset>
+      </div>
+      <!-- Question END -->
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

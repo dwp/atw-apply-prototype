@@ -1,0 +1,88 @@
+{% extends "layout.html" %} {% block pageTitle %} Question page {% endblock %}
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Question START -->
+    <!--<h1 id="question" class="govuk-heading-xl">Is it impossible for you to get to and from work using any of these?
+      </h1>-->
+
+    <form class="form" action="/condition" method="post">
+      <!-- Checkboxes -->
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Is it impossible for you to get to and from work using any of
+              these?
+            </h1>
+          </legend>
+
+          <div id="waste-hint" class="govuk-hint">
+            Tick all methods that you can't use at the moment.
+          </div>
+
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="waste"
+                name="waste"
+                type="checkbox"
+                value="carcasses"
+              />
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                Bus or tram
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="waste-2"
+                name="waste"
+                type="checkbox"
+                value="mines"
+              />
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                Walking or cycling
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="waste-3"
+                name="waste"
+                type="checkbox"
+                value="farm"
+              />
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Train or tube
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input
+                class="govuk-checkboxes__input"
+                id="waste-3"
+                name="waste"
+                type="checkbox"
+                value="farm"
+              />
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                No, you could use all of these
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

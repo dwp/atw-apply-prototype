@@ -1,0 +1,735 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+    <!-- Answers START -->
+
+    <!-- Section 1: Personal details -->
+    <h2 class="govuk-heading-m">Your conditions or disabilities</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Did you receive a letter from the NHS or have contact from your GP advising you to shield because of
+          coronavirus (COVID-19)?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ​{{ data['covid-letter'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> did you receive a letter from the NHS or have contact from your GP
+              advising you to shield because of coronavirus (COVID-19)</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          What are your conditions or disabilities?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> what are your conditions or disabilities</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <!-- Section END -->
+
+    <!-- Section 2: Your conditions or disabilities -->
+    <h2 class="govuk-heading-m">What support you are applying for</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you want some help to get to work?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ​{{ data['covid-letter'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> do you want some help to get to work</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How do you get to work at the moment?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> how do you get to work at the moment</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why can't you carry on using your car, getting a lift or a taxi?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> why can't you carry on using your car, getting a lift or a taxi</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How often does your work travel include using your car, getting a lift or a taxi?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> how often does your work travel include using your car, getting a lift
+              or a taxi</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why can't you carry on catching a bus or tram?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> why can't you carry on catching a bus or tram</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How often does your work travel include catching a bus or tram?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> how often does your work travel include catching a bus or tram</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why can't you carry on walking or cycling?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> why can't you carry on walking or cycling</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How often does your work travel include walking or cycling?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> how often does your work travel include walking or cycling</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why can't you carry on catching a train or tube?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> why can't you carry on catching a train or tube</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How often does your work travel include catching a train or tube?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> how often does your work travel include catching a train or tube</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why can't you carry on [something else]?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> why can't you carry on [something else]</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How often does your work travel include [something else]?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> how often does your work travel include [something else]</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is it impossible for you to get to and from work using any of these?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> is it impossible for you to get to and from work using any of
+              these</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why can't you travel by using your car, getting a lift or a taxi?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> why can't you travel by using your car, getting a lift or a taxi</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why can't you travel by catching a bus or tram?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> why can't you travel by catching a bus or tram</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why can't you travel by walking or cycling?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> why can't you travel by walking or cycling</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Why can't you travel by catching a train or tube?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> why can't you travel by catching a train or tube</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Does your condition make it harder for you to do your job?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> does your condition make it harder for you to do your job</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Tell us how it is harder
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> tell us how it is harder</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you do anything to get around these problems at the moment?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> do you do anything to get around these problems at the moment</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Tell us what you do
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> tell us what you do</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you know what you need to help you with this?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> do you know what you need to help you with this</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Tell us what would help you
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> tell us what would help you</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <!-- Section END -->
+
+    <!-- Section 3: Your employment details -->
+    <h2 class="govuk-heading-m">What support you are applying for</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employment status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ​{{ data['covid-letter'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> employment status</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Job title
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> job title</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Employer
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> employer</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> address</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How long have you been in your current job or role?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> how long have you been in your current job or role</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Work start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> work start date</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How many days a week do you usually work?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> how many days a week do you usually work</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          How many hours a week do you usually work?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> how many hours a week do you usually work</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your workplace contact
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> your workplace contact</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <!-- Section END -->
+
+    <!-- Section 4: Your personal details -->
+    <h2 class="govuk-heading-m">What support you are applying for</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          ​{{ data['covid-letter'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> address</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Who do you want to be contacted about your condition award or application?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> who do you want to be contacted about your condition award or
+              application</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> contact name</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Contact phone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> contact phone number</span>
+          </a>
+        </dd>
+      </div>
+
+      <!-- Question -->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Relationship with contact
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['condition'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a href="#">
+            Change
+            <span class="govuk-visually-hidden"> relationship with contact</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <!-- Section END -->
+
+    <!-- Answers END -->
+
+    <!-- <h2 class="govuk-heading-m">Now send your application</h2> -->
+
+    <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are
+      providing are correct.</p>
+
+    <form action="/declaration" method="post" novalidate>
+
+      <input type="hidden" name="answers-checked" value="true">
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
