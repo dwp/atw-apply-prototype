@@ -20,52 +20,50 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="address-line-1">
+              <label class="govuk-label" for="f-firstName">
                 First name
-                <span class="govuk-visually-hidden">line 1 of 2</span>
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="address-line-1" name="address-line-1" type="text"/>
+              <input class="govuk-input govuk-!-width-one-half" id="f-firstName" name="firstName" type="text" value="{{ data['firstname'] }}">
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="address-line-1">
+              <label class="govuk-label" for="f-lastName">
                 Last name
-                <span class="govuk-visually-hidden">line 1 of 2</span>
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="address-line-1" name="address-line-1" type="text"/>
+              <input class="govuk-input govuk-!-width-one-half" id="f-lastName" name="lastName" type="text" value="{{ data['lastname'] }}"/>
             </div>
           </fieldset>
         </div>
 
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
             <legend class="govuk-fieldset__legend">Date of birth</legend>
-            <div id="passport-issued-hint" class="govuk-hint">
+            <div id="dob-hint" class="govuk-hint">
               For example, 31 3 1980
             </div>
-            <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input" id="dob">
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  <label class="govuk-label govuk-date-input__label" for="f-dob-dd">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="f-dob-dd" name="dob-dd" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-dd'] }}"/>
                 </div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  <label class="govuk-label govuk-date-input__label" for="f-dob-mm">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-mm" name="dob-mm" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-mm'] }}"/>
                 </div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  <label class="govuk-label govuk-date-input__label" for="f-dob-yyyy">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="f-dob-yyyy" name="dob-yyyy" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-yyyy'] }}"/>
                 </div>
               </div>
             </div>
@@ -79,11 +77,11 @@
             </legend>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="address-line-1">
+              <label class="govuk-label" for="f-firstName">
                 Building and street
                 <span class="govuk-visually-hidden">line 1 of 2</span>
               </label>
-              <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"/>
+              <input class="govuk-input" id="f-firstName" name="f-firstName" type="text"/>
             </div>
 
             <div class="govuk-form-group">

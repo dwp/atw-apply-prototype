@@ -22,43 +22,42 @@
 
           <!-- Option 1 -->
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="work-duration" name="work-duration" type="radio" value="yes" ​="​" {{
-                checked( "work-duration" , "yes" ) }} data-aria-controls="conditional-work">
-            <label class="govuk-label govuk-radios__label" for="work-duration">
+            <input class="govuk-radios__input" id="f-currentRoleDuration" name="currentRoleDuration" type="radio" value="More than 6 Weeks" data-ga-question="How long have you been in your current job or role?" data-ga-answer="More than 6 weeks" {{ checked( "currentRoleDuration" , "More than 6 Weeks" ) }} data-aria-controls="conditional-f-currentRoleDuration">
+            <label class="govuk-label govuk-radios__label" for="currentRoleDuration">
               More than 6 weeks
             </label>
           </div>
 
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-f-currentRoleDuration">
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="startDateMoreThan6Weeks-hint">
                 <legend class="govuk-fieldset__legend">Work start date</legend>
-                <div id="passport-issued-hint" class="govuk-hint">
+                <div id="startDateMoreThan6Weeks-hint" class="govuk-hint">
                   For example, 31 3 1980
                 </div>
-                <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input" id="startDateMoreThan6Weeks">
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      <label class="govuk-label govuk-date-input__label" for="f-startDateMoreThan6Weeks-dd">
                         Day
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="f-startDateMoreThan6Weeks-dd" name="startDateMoreThan6Weeks-dd" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['startDateMoreThan6Weeks-dd'] }}"/>
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      <label class="govuk-label govuk-date-input__label" for="f-startDateMoreThan6Weeks-mm">
                         Month
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="f-startDateMoreThan6Weeks-mm" name="startDateMoreThan6Weeks-mm" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['startDateMoreThan6Weeks-mm'] }}"/>
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      <label class="govuk-label govuk-date-input__label" for="f-startDateMoreThan6Weeks-yyyy">
                         Year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="f-startDateMoreThan6Weeks-yyyy" name="startDateMoreThan6Weeks-yyyy" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['startDateMoreThan6Weeks-yyyy'] }}"/>
                     </div>
                   </div>
                 </div>
@@ -68,43 +67,43 @@
 
           <!-- Option 2 -->
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="work-duration-2" name="work-duration" type="radio" value="no" ​="​" {{
-                checked( "work-duration" , "no" ) }} data-aria-controls="conditional-work-2">
-            <label class="govuk-label govuk-radios__label" for="work-duration-2">
+            <input class="govuk-radios__input" id="currentRoleDuration-2" name="currentRoleDuration" type="radio" value="no" ​="​" {{
+                checked( "currentRoleDuration" , "no" ) }} data-aria-controls="conditional-currentRoleDuration-2">
+            <label class="govuk-label govuk-radios__label" for="currentRoleDuration-2">
               Less than 6 weeks
             </label>
           </div>
 
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-2">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-currentRoleDuration-2">
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="startDateLessThan6Weeks-hint">
                 <legend class="govuk-fieldset__legend">Work start date</legend>
-                <div id="passport-issued-hint" class="govuk-hint">
+                <div id="startDateLessThan6Weeks-hint" class="govuk-hint">
                   For example, 31 3 1980
                 </div>
                 <div class="govuk-date-input" id="passport-issued">
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      <label class="govuk-label govuk-date-input__label" for="f-startDateLessThan6Weeks-dd">
                         Day
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="f-startDateLessThan6Weeks-dd" name="f-startDateLessThan6Weeks-dd" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['startDateLessThan6Weeks-dd'] }}"/>
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      <label class="govuk-label govuk-date-input__label" for="f-startDateLessThan6Weeks-mm">
                         Month
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="f-startDateLessThan6Weeks-mm" name="f-startDateLessThan6Weeks-mm" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['startDateLessThan6Weeks-mm'] }}"/>
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      <label class="govuk-label govuk-date-input__label" for="f-startDateLessThan6Weeks-yyyy">
                         Year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="f-startDateLessThan6Weeks-yyyy" name="f-startDateLessThan6Weeks-yyyy" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['startDateLessThan6Weeks-yyyy'] }}"/>
                     </div>
                   </div>
                 </div>
@@ -114,43 +113,43 @@
 
           <!-- Option 3 -->
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="covid-letter-3" name="work-duration" type="radio" value="no" ​="​" {{
-                checked( "work-duration" , "no" ) }} data-aria-controls="conditional-work-3">
-            <label class="govuk-label govuk-radios__label" for="work-duration-3">
+            <input class="govuk-radios__input" id="covid-letter-3" name="currentRoleDuration" type="radio" value="no" ​="​" {{
+                checked( "currentRoleDuration" , "no" ) }} data-aria-controls="conditional-currentRoleDuration-3">
+            <label class="govuk-label govuk-radios__label" for="currentRoleDuration-3">
               You have not started yet
             </label>
           </div>
 
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-3">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-currentRoleDuration-3">
             <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="startDateNotStarted-hint">
                 <legend class="govuk-fieldset__legend">Work start date</legend>
-                <div id="passport-issued-hint" class="govuk-hint">
+                <div id="startDateNotStarted-hint" class="govuk-hint">
                   For example, 31 3 1980
                 </div>
                 <div class="govuk-date-input" id="passport-issued">
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      <label class="govuk-label govuk-date-input__label" for="f-startDateNotStarted-dd">
                         Day
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="f-startDateNotStarted-dd" name="f-startDateNotStarted-dd" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['startDateNotStarted-dd'] }}"/>
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      <label class="govuk-label govuk-date-input__label" for="f-startDateNotStarted-mm">
                         Month
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="f-startDateNotStarted-mm" name="f-startDateNotStarted-mm" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['startDateNotStarted-mm'] }}"/>
                     </div>
                   </div>
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      <label class="govuk-label govuk-date-input__label" for="f-startDateNotStarted-yyyy">
                         Year
                       </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"/>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="f-startDateNotStarted-yyyy" name="f-startDateNotStarted-yyyy" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['startDateNotStarted-yyyy'] }}"/>
                     </div>
                   </div>
                 </div>
@@ -163,17 +162,22 @@
     </div>
 
     <div class="govuk-form-group">
-      <label class="govuk-label" for="days-a-week">
+      <label class="govuk-label" for="f-daysPerWeek">
         How many days a week do you usually work?
       </label>
-      <input class="govuk-input govuk-input--width-2" id="days-a-week" name="days-a-week" type="text"/>
+      <input class="govuk-input govuk-input--width-2" id="f-daysPerWeek" name="daysPerWeek" type="text" value="{{ data['daysPerWeek'] }}"/>
     </div>
 
     <div class="govuk-form-group">
-      <label class="govuk-label" for="hours-a-week">
+      <label class="govuk-label" for="f-hoursPerWeek">
         How many hours a week do you usually work?
       </label>
-      <input class="govuk-input govuk-input--width-3" id="hours-a-week" name="hours-a-week" type="text"/>
+      <div id="f-hoursPerWeek-hint" class="govuk-hint">
+        If your hours change from week to week you can put a range,
+        <abbr title="for example">eg</abbr>
+        between 35 and 40 hours a week
+      </div>
+      <input class="govuk-input govuk-input--width-3" id="f-hoursPerWeek" name="hoursPerWeek" type="text" value="{{ data['hoursPerWeek'] }}"/>
     </div>
     <!-- Question END -->
 

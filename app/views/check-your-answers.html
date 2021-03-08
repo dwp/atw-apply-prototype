@@ -463,7 +463,7 @@
     <!-- Section END -->
 
     <!-- Section 3: Your employment details -->
-    <h2 class="govuk-heading-m">What support you are applying for</h2>
+    <h2 class="govuk-heading-m">Your employment details</h2>
 
     {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -544,7 +544,7 @@
                     text: "How long have you been in your current job or role?"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['currentRoleDuration']
                 },
                 actions: {
                     items: [
@@ -562,7 +562,9 @@
                     text: "Work start date"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['startDateMoreThan6Weeks-dd']+"-"+
+                    data['startDateMoreThan6Weeks-mm']+"-"+
+                    data['startDateMoreThan6Weeks-yyyy']
                 },
                 actions: {
                     items: [
@@ -580,7 +582,7 @@
                     text: "How many days a week do you usually work?"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['daysPerWeek']
                 },
                 actions: {
                     items: [
@@ -598,7 +600,7 @@
                     text: "How many hours a week do you usually work?"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['hoursPerWeek']
                 },
                 actions: {
                     items: [
@@ -616,7 +618,7 @@
                     text: "Your workplace contact"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['workContactName']+"\n"+data['workContactEmail']+"\n"+data['workContactNumber']
                 },
                 actions: {
                     items: [
@@ -633,7 +635,7 @@
     <!-- Section END -->
 
     <!-- Section 4: Your personal details -->
-    <h2 class="govuk-heading-m">What support you are applying for</h2>
+    <h2 class="govuk-heading-m">Your personal details</h2>
 
     {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -642,7 +644,7 @@
                     text: "Name"
                 },
                 value: {
-                    text: data['covid-letter']
+                    text: data['firstName']+" "+data['lastName']
                 },
                 actions: {
                     items: [
@@ -660,7 +662,9 @@
                     text: "Date of birth"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['dob-dd']+"-"+
+                    data['dob-mm']+"-"+
+                    data['dob-yyyy']
                 },
                 actions: {
                     items: [

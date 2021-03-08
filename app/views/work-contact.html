@@ -14,10 +14,10 @@
     </legend>
 
     <div class="govuk-form-group">
-      <label class="govuk-label" for="address-line-1">
+      <label class="govuk-label" for="f-workContactName">
         Their name
       </label>
-      <input class="govuk-input govuk-!-width-one-half" id="address-line-1" name="address-line-1" type="text"/>
+      <input class="govuk-input govuk-!-width-one-half" id="f-workContactName" name="workContactName" type="text" value="{{ data['workContactName'] }}"/>
     </div>
 
     <p>
@@ -29,46 +29,46 @@
     </p>
 
     <!-- Contact details -->
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <div class=" govuk-form-group" ="govuk-form-group" ">
+      <fieldset class="govuk-fieldset" aria-describedby="workContactPrefs-hint">
 
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--s" for="event-name">
+          <label class="govuk-label govuk-label--s" for="workContactPrefs">
             How can we contact them?
           </label>
         </h1>
-        <div id="event-name-hint" class="govuk-hint">
+        <div id="workContactPrefs-hint" class="govuk-hint">
           Select as many as you like:
         </div>
 
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes" id="f-workContactPrefs-wrapper" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="contactPrefs" name="contactPrefs[]" type="checkbox" value="email" data-aria-controls="conditional-contact-email"/>
-            <label class="govuk-label govuk-checkboxes__label" for="contactPrefs">
+            <input class="govuk-checkboxes__input" id="f-workContactPrefs" name="workContactPrefs[]" type="checkbox" value="email" data-aria-controls="conditional-f-workContactPrefs"/>
+            <label class="govuk-label govuk-checkboxes__label" for="f-workContactPrefs">
               Email
             </label>
           </div>
-          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-email">
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-f-workContactPrefs">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-email">
+              <label class="govuk-label" for="f-workContactEmail">
                 Email address
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false"/>
+              <input class="govuk-input govuk-!-width-one-half" id="f-workContactEmail" name="workContactEmail" type="email" spellcheck="false" value="{{ data['workContactEmail'] }}"/>
             </div>
           </div>
 
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="contactPrefs-2" name="contactPrefs[]" type="checkbox" value="phone-call" data-aria-controls="conditional-contact-phone"/>
-            <label class="govuk-label govuk-checkboxes__label" for="contactPrefs-2">
+          <div class=" govuk-checkboxes__item" ="govuk-checkboxes__item" ">
+            <input class="govuk-checkboxes__input" id="workContactPrefs-2" name="workContactPrefs[]" type="checkbox" value="phone" data-aria-controls="conditional-workContactPrefs-2"/>
+            <label class="govuk-label govuk-checkboxes__label" for="workContactPrefs-2">
               Phone
             </label>
           </div>
-          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-phone">
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-workContactPrefs-2">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-phone">
+              <label class="govuk-label" for="f-workContactNumber">
                 Phone number
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="contact-by-phone" name="contact-by-phone" type="tel"/>
+              <input class="govuk-input govuk-!-width-one-half" id="f-workContactNumber" name="workContactNumber" type="tel" value="{{ data['workContactNumber'] }}"/>
             </div>
           </div>
         </div>
