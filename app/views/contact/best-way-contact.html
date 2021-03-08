@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/contact/who-contact">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/contact/best-way-contact-answer" method="post" class="form">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What’s the best way to contact you?
+            </h1>
+          </legend>
+
+          <p>We can only contact you between 9am and 5pm, Monday to Friday. We’ll contact you in the next 3 weeks.</p>
+
+
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="best-way-contact" name="best-way-contact" type="radio" value="Email">
+        <label class="govuk-label govuk-radios__label" for="best-way-contact">
+          Email
+        </label>
+    </div>
+
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="best-way-contact" name="best-way-contact" type="radio" value="Phone">
+        <label class="govuk-label govuk-radios__label" for="best-way-contact">
+      Phone call
+        </label>
+    </div>
+
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+      <input class="govuk-radios__input" id="best-way-contact" name="best-way-contact" type="radio" value="Both phone and email">
+        <label class="govuk-label govuk-radios__label" for="best-way-contact">
+          Text message
+        </label>
+    </div>
+
+        </fieldset>
+      </div>
+
+      <form class="form" action="/contact/phone-1" method="post">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/contact/best-way-contact">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <fieldset class="govuk-fieldset">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What’s the best phone number to contact you on?
+                </h1>
+              </legend>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Main phone number
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Second phone number (optional)
+                </label>
+                <input class="govuk-input govuk-input--width-20" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+
+            </fieldset>
+
+    <form class="form" action="/contact/option-email" method="post">
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
