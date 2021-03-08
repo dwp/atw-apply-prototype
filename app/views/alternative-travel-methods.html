@@ -9,7 +9,7 @@
     <!--<h1 id="question" class="govuk-heading-xl">Is it impossible for you to get to and from work using any of these?
       </h1>-->
 
-    <form class="form" action="/condition" method="post">
+    <form class="form" action="/alternative-car-lift-or-taxi" method="post">
       <!-- Checkboxes -->
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
@@ -28,12 +28,12 @@
             <div class="govuk-checkboxes__item">
               <input
                 class="govuk-checkboxes__input"
-                id="waste"
-                name="waste"
+                id="f-unusedTravelMethods"
+                name="unusedTravelMethods[]"
                 type="checkbox"
-                value="carcasses"
+                value="bus"
               />
-              <label class="govuk-label govuk-checkboxes__label" for="waste">
+              <label class="govuk-label govuk-checkboxes__label" for="f-unusedTravelMethods">
                 Bus or tram
               </label>
             </div>
@@ -41,12 +41,12 @@
             <div class="govuk-checkboxes__item">
               <input
                 class="govuk-checkboxes__input"
-                id="waste-2"
-                name="waste"
+                id="unusedTravelMethods-2"
+                name="unusedTravelMethods[]"
                 type="checkbox"
-                value="mines"
+                value="walking"
               />
-              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+              <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-2">
                 Walking or cycling
               </label>
             </div>
@@ -54,12 +54,12 @@
             <div class="govuk-checkboxes__item">
               <input
                 class="govuk-checkboxes__input"
-                id="waste-3"
-                name="waste"
+                id="unusedTravelMethods-3"
+                name="unusedTravelMethods[]"
                 type="checkbox"
-                value="farm"
+                value="train"
               />
-              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-3">
                 Train or tube
               </label>
             </div>
@@ -67,12 +67,12 @@
             <div class="govuk-checkboxes__item">
               <input
                 class="govuk-checkboxes__input"
-                id="waste-3"
-                name="waste"
+                id="unusedTravelMethods-4"
+                name="unusedTravelMethods[]"
                 type="checkbox"
-                value="farm"
+                value="none"
               />
-              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+              <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-4">
                 No, you could use all of these
               </label>
             </div>

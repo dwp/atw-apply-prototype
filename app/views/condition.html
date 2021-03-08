@@ -1,52 +1,27 @@
 {% extends "layout.html" %} {% block pageTitle %} Question page {% endblock %}
-{% block beforeContent %}
-<a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %} {% block content %}
+{% block content_section %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/help-with-travel" method="post">
-      <!-- Question -->
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-          Does your condition make it harder for you to do your job?
-        </h1>
-      </legend>
+<form class="form" action="/help-with-travel" method="post">
+  <!-- Question -->
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    <h1 class="govuk-fieldset__heading">
+      Does your condition make it harder for you to do your job?
+    </h1>
+  </legend>
 
-      <div class="govuk-form-group">
-        <!-- Text input -->
-        <input
-          class="govuk-input"
-          id="condition"
-          name="condition"
-          type="text"
-          value="{{ data['condition'] }}"
-        />
-      </div>
-      <!-- Question END -->
-
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-    </form>
+  <div class="govuk-form-group">
+    <!-- Text input -->
+    <input
+      class="govuk-input"
+      id="f-description"
+      name="description"
+      type="text"
+      value="{{ data['description'] }}"
+    />
   </div>
-  <div class="govuk-grid-column-one-third">
-    <aside id="journey-sidebar">
-      <h2 class="govuk-heading-m">Get help</h2>
+  <!-- Question END -->
 
-      <h2 class="govuk-heading-s">Telephone</h2>
-
-      <p>0800 169 0154</p>
-
-      <p>Monday to Friday, 8am to 6pm</p>
-
-      <p>Closed public holidays</p>
-
-      <h2 class="govuk-heading-s">Email</h2>
-
-      <a href="mailto:dwponline.helpdesk@dwp.gov.uk"
-        >dwponline.helpdesk@dwp.gov.uk</a
-      >
-    </aside>
-  </div>
-</div>
+  {{ govukButton({ text: "Continue" }) }}
+</form>
 
 {% endblock %}
