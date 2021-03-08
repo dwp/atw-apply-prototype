@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/contact/who-contact">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="more-detail">
+            Who can we contact?
+          </label>
+        </h1>
+
+        <p>This should be someone you trust and who can talk about what support you need.</p>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="address-line-1">
+          Their name
+        </label>
+        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+      </div>
+
+      <div class="govuk-form-group">
+      <label class="govuk-label" for="address-line-1">
+        Your relationship with this person
+      </label>
+        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+
+    </fieldset>
+
+<form class="form" action="/contact/rep-phone" method="post">
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+</form>
+
+</div>
+</div>
+
+{% endblock %}

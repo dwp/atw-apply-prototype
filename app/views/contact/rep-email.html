@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% block beforeContent %}
+
+  <a class="govuk-back-link" href="/contact/rep-phone">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <fieldset class="govuk-fieldset">
+
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What’s the best email address to contact them on?
+                </h1>
+              </legend>
+
+              <p>We can only contact them between 9am and 5pm, Monday to Friday. We’ll contact them in the next 3 weeks.</p>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Main email address
+                </label>
+                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Second email address (optional)
+                </label>
+                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+            </fieldset>
+
+    <form class="form" action="" method="post">
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
