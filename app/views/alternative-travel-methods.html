@@ -1,88 +1,80 @@
 {% extends "layout.html" %} {% block pageTitle %} Question page {% endblock %}
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %} {% block content %}
+{% endblock %} {% block content_section %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <!-- Question START -->
-    <!--<h1 id="question" class="govuk-heading-xl">Is it impossible for you to get to and from work using any of these?
-      </h1>-->
+<form class="form" action="/alternative-car-lift-or-taxi" method="post">
+  <!-- Checkboxes -->
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Is it impossible for you to get to and from work using any of
+          these?
+        </h1>
+      </legend>
 
-    <form class="form" action="/alternative-car-lift-or-taxi" method="post">
-      <!-- Checkboxes -->
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Is it impossible for you to get to and from work using any of
-              these?
-            </h1>
-          </legend>
-
-          <div id="waste-hint" class="govuk-hint">
-            Tick all methods that you can't use at the moment.
-          </div>
-
-          <div class="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input
-                class="govuk-checkboxes__input"
-                id="f-unusedTravelMethods"
-                name="unusedTravelMethods[]"
-                type="checkbox"
-                value="bus"
-              />
-              <label class="govuk-label govuk-checkboxes__label" for="f-unusedTravelMethods">
-                Bus or tram
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input
-                class="govuk-checkboxes__input"
-                id="unusedTravelMethods-2"
-                name="unusedTravelMethods[]"
-                type="checkbox"
-                value="walking"
-              />
-              <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-2">
-                Walking or cycling
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input
-                class="govuk-checkboxes__input"
-                id="unusedTravelMethods-3"
-                name="unusedTravelMethods[]"
-                type="checkbox"
-                value="train"
-              />
-              <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-3">
-                Train or tube
-              </label>
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input
-                class="govuk-checkboxes__input"
-                id="unusedTravelMethods-4"
-                name="unusedTravelMethods[]"
-                type="checkbox"
-                value="none"
-              />
-              <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-4">
-                No, you could use all of these
-              </label>
-            </div>
-          </div>
-        </fieldset>
+      <div id="waste-hint" class="govuk-hint">
+        Tick all methods that you can't use at the moment.
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-    </form>
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input
+            class="govuk-checkboxes__input"
+            id="f-unusedTravelMethods"
+            name="unusedTravelMethods[]"
+            type="checkbox"
+            value="bus"
+          />
+          <label class="govuk-label govuk-checkboxes__label" for="f-unusedTravelMethods">
+            Bus or tram
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input
+            class="govuk-checkboxes__input"
+            id="unusedTravelMethods-2"
+            name="unusedTravelMethods[]"
+            type="checkbox"
+            value="walking"
+          />
+          <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-2">
+            Walking or cycling
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input
+            class="govuk-checkboxes__input"
+            id="unusedTravelMethods-3"
+            name="unusedTravelMethods[]"
+            type="checkbox"
+            value="train"
+          />
+          <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-3">
+            Train or tube
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes__item">
+          <input
+            class="govuk-checkboxes__input"
+            id="unusedTravelMethods-4"
+            name="unusedTravelMethods[]"
+            type="checkbox"
+            value="none"
+          />
+          <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-4">
+            No, you could use all of these
+          </label>
+        </div>
+      </div>
+    </fieldset>
   </div>
-</div>
+
+  <button class="govuk-button" data-module="govuk-button">Continue</button>
+</form>
 
 {% endblock %}

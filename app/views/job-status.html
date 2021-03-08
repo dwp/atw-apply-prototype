@@ -1,85 +1,81 @@
-{% extends "layout.html" %} {% block pageTitle %} Question page {% endblock %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Question page
+{% endblock %}
 {% block beforeContent %}
-<a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %} {% block content %}
+  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
+{% endblock %}
+{% block content_section %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/employed" method="post">
-      <!-- Radios -->
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="job-status-hint">
-          <!-- Question -->
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">Your employment status</h1>
-          </legend>
+  <form class="form" action="/employed" method="post">
+    <!-- Radios -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="job-status-hint">
+        <!-- Question -->
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">Your employment status</h1>
+        </legend>
 
-          <div class="govuk-radios">
-            <!-- Option 1 -->
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="job-status"
-              name="job-status" type="radio" value="yes"​ {{ checked(
-              "job-status", "yes" ) }}​>
-              <label class="govuk-label govuk-radios__label" for="job-status">
-                Employed
-              </label>
-            </div>
-
-            <!-- Option 2 -->
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="job-status-2"
-              name="job-status" type="radio" value="no"​ {{ checked(
-              "job-status", "no" ) }}>
-              <label class="govuk-label govuk-radios__label" for="job-status-2">
-                Self-employed
-              </label>
-            </div>
-
-            <!-- Option 3 -->
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="job-status-3"
-              name="job-status" type="radio" value="no"​ {{ checked(
-              "job-status", "no" ) }}>
-              <label class="govuk-label govuk-radios__label" for="job-status-3">
-                Director of a limited company
-              </label>
-            </div>
+        <div class="govuk-radios">
+          <!-- Option 1 -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="job-status" name="job-status" type="radio" value="yes" ​="​" {{ checked(
+              "job-status", "yes" ) }}>
+            <label class="govuk-label govuk-radios__label" for="job-status">
+              Employed
+            </label>
           </div>
-        </fieldset>
+
+          <!-- Option 2 -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="job-status-2" name="job-status" type="radio" value="no" ​="​" {{ checked(
+              "job-status", "no" ) }}>
+            <label class="govuk-label govuk-radios__label" for="job-status-2">
+              Self-employed
+            </label>
+          </div>
+
+          <!-- Option 3 -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="job-status-3" name="job-status" type="radio" value="no" ​="​" {{ checked(
+              "job-status", "no" ) }}>
+            <label class="govuk-label govuk-radios__label" for="job-status-3">
+              Director of a limited company
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I have a job but I haven't started it yet
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        You can still apply. Select the status that will apply to you.
       </div>
-      <!-- Question END -->
+    </details>
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            I have a job but I haven't started it yet
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          You can still apply. Select the status that will apply to you.
-        </div>
-      </details>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I’m not sure if my work counts as being employed
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>
+          Select 'Employed' if you’re on or about to start an apprenticeship, work trial, work experience, internship or 'Permitted Work'.
+        </p>
+        <p>
+          You can't apply for Access to Work if you’re doing voluntary work.
+        </p>
+      </div>
+    </details>
 
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            I’m not sure if my work counts as being employed
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p>
-            Select 'Employed' if you’re on or about to start an apprenticeship,
-            work trial, work experience, internship or 'Permitted Work'.
-          </p>
-          <p>
-            You can't apply for Access to Work if you’re doing voluntary work.
-          </p>
-        </div>
-      </details>
-
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-    </form>
-  </div>
-</div>
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+  </form>
 
 {% endblock %}

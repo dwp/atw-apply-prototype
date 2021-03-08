@@ -1,24 +1,20 @@
-{% extends "layout.html" %} {% block pageTitle %} Question page {% endblock %}
+{% extends "layout.html" %}
+{% block pageTitle %}
+Question page
+{% endblock %}
 
 {% block content_section %}
-{# <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds"> #}
+
     <!-- Question START -->
     <form
       class="form"
-      {%
-      block
-      action
-      %}action="bus-or-tram"
-      {%
-      endblock
-      %}
+      {% block action %}action="bus-or-tram"
+      {% endblock %}
       method="post"
     >
       <div class="govuk-form-group">
         <p class="govuk-body">
-          Why can't you carry on {% block method %} using your car, getting a
-          lift or a taxi{% endblock %}?
+          Why can't you carry on {% block method %} using your car, getting a lift or a taxi{% endblock %}?
         </p>
 
         <!-- Text input -->
@@ -95,7 +91,5 @@
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
-  {# </div>
-</div> #}
 
 {% endblock %}
