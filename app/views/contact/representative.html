@@ -4,15 +4,11 @@
   Question page
 {% endblock %}
 
-{% block beforeContent %}
-  <a class="govuk-back-link" href="/contact/who-contact">Back</a>
-{% endblock %}
+{% set backto = "/contact/who-contact" %}
 
-{% block content %}
+{% block content_section %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
+  <form class="form" action="/contact/rep-phone" method="post">
     <fieldset class="govuk-fieldset">
 
       <div class="govuk-form-group">
@@ -25,25 +21,21 @@
         <p>This should be someone you trust and who can talk about what support you need.</p>
 
         <div class="govuk-form-group">
-        <label class="govuk-label" for="address-line-1">
-          Their name
-        </label>
-        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+          <label class="govuk-label" for="contactName">
+            Their name
+          </label>
+          <input class="govuk-input" id="contactName" name="contactName" type="text" autocomplete="contactName" value="{{ data['contactName'] }}"></div>
       </div>
 
       <div class="govuk-form-group">
-      <label class="govuk-label" for="address-line-1">
-        Your relationship with this person
-      </label>
-        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        <label class="govuk-label" for="contactRelationship">
+          Your relationship with this person
+        </label>
+        <textarea class="govuk-textarea" id="contactRelationship" name="contactRelationship" rows="5">{{ data['contactRelationship'] }}</textarea>
 
-    </fieldset>
+      </fieldset>
 
-<form class="form" action="/contact/rep-phone" method="post">
-<button class="govuk-button" data-module="govuk-button">Continue</button>
-</form>
+      {{ govukButton({ text: "Continue" }) }}
+    </form>
 
-</div>
-</div>
-
-{% endblock %}
+  {% endblock %}

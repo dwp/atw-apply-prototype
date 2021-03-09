@@ -4,51 +4,45 @@
   Question page
 {% endblock %}
 
-{% block beforeContent %}
-  <a class="govuk-back-link" href="/contact/about-you">Back</a>
-{% endblock %}
+{% set backto = "/contact/personal-details" %}
 
-{% block content %}
+{% block content_section %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <form action="/contact/who-contact-answer" method="post" class="form">
 
-      <form action="/contact/who-contact-answer" method="post" class="form">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Who can we contact about your application?
+          </h1>
+        </legend>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Who can we contact about your application?
-            </h1>
-          </legend>
+        <p>We need to discuss what support you need. We’ll contact you in the next 3 weeks.</p>
 
-          <p>We need to discuss what support you need. We’ll contact you in the next 3 weeks.</p>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="f-whoToContact" name="whoToContact" type="radio" value="Me" {{
+          checked( "whoToContact", "Me" ) }}>
+            <label class="govuk-label govuk-radios__label" for="f-whoToContact">
+              Me
+            </label>
+          </div>
 
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="" name="contact-me" type="radio" value="true">
-        <label class="govuk-label govuk-radios__label" for="contact-me-yes">
-      Me
-        </label>
-    </div>
-
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="contact-me-no" name="contact-me" type="radio" value="false">
-        <label class="govuk-label govuk-radios__label" for="contact-me-no">
-      Someone else, who can speak for me
-        </label>
-    </div>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="whoToContact-2" name="whoToContact" type="radio" value="Someone else, who can speak for me" {{
+          checked( "whoToContact", "Someone else, who can speak for me" ) }}>
+              <label class="govuk-label govuk-radios__label" for="whoToContact-2">
+                Someone else, who can speak for me
+              </label>
+            </div>
           </div>
 
         </fieldset>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-      </form>
+      {{ govukButton({ text: "Continue" }) }}
+    </form>
 
-    </div>
-  </div>
-
-{% endblock %}
+  {% endblock %}

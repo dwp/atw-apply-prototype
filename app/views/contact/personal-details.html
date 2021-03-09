@@ -3,20 +3,24 @@
   Question page
 {% endblock %}
 
+{% set backto = "/contact/personal-details" %}
+
 {% block content_section %}
 
   <!-- Form START -->
-  <form class="form" action="/contact" method="post">
+  <form class="form" action="/contact/who-contact" method="post">
 
     <div class="govuk-form-group">
 
       <fieldset class="govuk-fieldset">
-        <!-- Question -->
+
+        <!-- ABOUT YOU -->
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">About you</h1>
         </legend>
 
-        <div class="govuk-form-group">
+        <!-- YOUR NAME -->
+        <div class="govuk-form-group govuk-!-margin-bottom-8">
           <fieldset class="govuk-fieldset">
             <div class="govuk-form-group">
               <label class="govuk-label" for="f-firstName">
@@ -34,9 +38,12 @@
           </fieldset>
         </div>
 
-        <div class="govuk-form-group">
+        <!-- DATE OF BIRTH -->
+        <div class="govuk-form-group govuk-!-margin-bottom-8">
           <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-            <legend class="govuk-fieldset__legend">Date of birth</legend>
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Date of birth</legend>
+
             <div id="dob-hint" class="govuk-hint">
               For example, 31 3 1980
             </div>
@@ -69,46 +76,47 @@
           </fieldset>
         </div>
 
+        <!-- YOUR ADDRESS -->
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset apply-address">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Address
+              Home address
             </legend>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="address-line-1">
+              <label class="govuk-label" for="your-address-1">
                 Building and street
                 <span class="govuk-visually-hidden">line 1 of 2</span>
               </label>
-              <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"/>
+              <input class="govuk-input" id="your-address-1" name="your-address-1" type="text" value="{{ data['your-address-line-1'] }}"/>
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="address-line-2">
+              <label class="govuk-label" for="your-address-2">
                 <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
               </label>
-              <input class="govuk-input" id="address-line-2" name="address-line-2" type="text"/>
+              <input class="govuk-input" id="your-address-2" name="your-address-2" type="text" value="{{ data['your-address-line-2'] }}"/>
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="address-town">
+              <label class="govuk-label" for="your-address-3">
                 Town or city
               </label>
-              <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text"/>
+              <input class="govuk-input govuk-!-width-two-thirds" id="your-address-3" name="your-address-3" type="text" value="{{ data['your-address-line-3'] }}"/>
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="address-county">
+              <label class="govuk-label" for="your-address-4">
                 County
               </label>
-              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text"/>
+              <input class="govuk-input govuk-!-width-two-thirds" id="your-address-4" name="your-address-4" type="text" value="{{ data['your-address-line-4'] }}"/>
             </div>
 
             <div class="govuk-form-group">
-              <label class="govuk-label" for="address-postcode">
+              <label class="govuk-label" for="your-address-postcode">
                 Postcode
               </label>
-              <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text"/>
+              <input class="govuk-input govuk-input--width-10" id="your-address-postcode" name="your-address-postcode" type="text" value="{{ data['your-address-postcode'] }}"/>
             </div>
           </fieldset>
         </div>
@@ -116,7 +124,7 @@
     </div>
     <!-- Question END -->
 
-    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    {{ govukButton({ text: "Continue" }) }}
   </form>
 
 {% endblock %}

@@ -4,60 +4,52 @@
   Question page
 {% endblock %}
 
-{% block beforeContent %}
-  <a class="govuk-back-link" href="/contact/who-contact">Back</a>
-{% endblock %}
+{% set backto = "/contact/who-contact" %}
 
-{% block content %}
+{% block content_section %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <form action="/contact/best-way-contact-answer" method="post" class="form">
 
-      <form action="/contact/best-way-contact-answer" method="post" class="form">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What’s the best way to contact you?
+          </h1>
+        </legend>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              What’s the best way to contact you?
-            </h1>
-          </legend>
+        <p>We can only contact you between 9am and 5pm, Monday to Friday. We’ll contact you in the next 3 weeks.</p>
 
-          <p>We can only contact you between 9am and 5pm, Monday to Friday. We’ll contact you in the next 3 weeks.</p>
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="f-bestWayContact" name="bestWayContact" type="radio" value="Email" {{
+          checked( "bestWayContact", "Email" ) }}>
+            <label class="govuk-label govuk-radios__label" for="f-bestWayContact">
+              Email
+            </label>
+          </div>
 
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="bestWayContact-2" name="bestWayContact" type="radio" value="Phone" {{
+          checked( "bestWayContact", "Phone" ) }}>
+            <label class="govuk-label govuk-radios__label" for="bestWayContact-2">
+              Phone call
+            </label>
+          </div>
 
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="best-way-contact" name="best-way-contact" type="radio" value="Email">
-        <label class="govuk-label govuk-radios__label" for="best-way-contact">
-          Email
-        </label>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="bestWayContact-3" name="bestWayContact" type="radio" value="Text message" {{
+          checked( "bestWayContact", "Text message" ) }}>
+            <label class="govuk-label govuk-radios__label" for="bestWayContact-3">
+              Text message
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
     </div>
 
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="best-way-contact" name="best-way-contact" type="radio" value="Phone">
-        <label class="govuk-label govuk-radios__label" for="best-way-contact">
-      Phone call
-        </label>
-    </div>
-
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="best-way-contact" name="best-way-contact" type="radio" value="Both phone and email">
-        <label class="govuk-label govuk-radios__label" for="best-way-contact">
-          Text message
-        </label>
-    </div>
-
-        </fieldset>
-      </div>
-
-      <form class="form" action="/contact/phone-1" method="post">
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-      </form>
-
-    </div>
-  </div>
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
 
 {% endblock %}
