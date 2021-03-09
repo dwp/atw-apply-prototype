@@ -3,13 +3,31 @@
     Check your answers
 {% endblock %}
 
+<!-- START Date converter -->
+{% set months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+] %}
+<!-- END Date converter -->
+
+<!-- START Placeholder information -->
 {% set clinicallyExtremelyVulnerable = "Yes" %}
 {% set condition = "I am registered blind" %}
 {% set helpWanted = "Yes I want help" %}
 {% set travelMethods = "Bus or tram" %}
 {% set whyCantBus = "I am registered blind and have recently been told that our office is moving  to a business park that is not served by public transport.  Getting taxi's every day would cost me more than it is worth for me to work" %}
 {% set journeyAmountBus = "8 times a week" %}
-{% set unusedTravelMethods = "Bus or tram, Walking or cycling, Train or tube" %}
+{% set unusedTravelMethods = "<p>Bus or tram</p><p>Walking or cycling</p><p>Train or tube</p>" | safe %}
 {% set whyImpossibleBus = "I am registered blind and have recently been told that our office is moving to a business park that is not served by public transport. Getting taxi's every day would cost me more than it is worth for me to work" %}
 {% set whyImpossibleWalk = "Because I'm blind so can't ride a bike. The office is 8 miles from my home and too far to walk" %}
 {% set whyImpossibleTrain = "My office is not on a train or tube line" %}
@@ -22,14 +40,13 @@
 {% set howEmployed = "Employed" %}
 {% set jobTitle = "Hospital Accountant" %}
 {% set employer = "Some Hospital" %}
-{% set workAddress = "85 Caxton Place, Kinton, Pemshire, KT1 6BN" %}
+{% set workAddress = "85 Caxton Place<br/>Kinton<br/>Pemshire<br/>KT1 6BN" | safe %}
 {% set currentRoleDuration = "More than 6 weeks" %}
-{% set workStartDate = "12th September 2018" %}
+{% set workStartDate = "12 September 2018" %}
 {% set daysPerWeek = "5 days a week" %}
 {% set hoursPerWeek = "40 hours a week" %}
-{% set workContact = "Bob Hoskins
- 07654123456
-bob.hoskins@simplybiz.com " %}
+{% set workContact = "<p>Bob Hoskins</p><p>07654123456</p><p>bob.hoskins@simplybiz.com</p>" | safe %}
+<!-- END Placeholder information -->
 
 {% block content_section %}
     <h1 class="govuk-heading-xl">
@@ -645,7 +662,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "/contact/personal-details",
+                        href: "/contact/personal-details_c",
                         text: "Change",
                         visuallyHiddenText: "name"
                     }]
@@ -657,14 +674,14 @@ bob.hoskins@simplybiz.com " %}
                     text: "Date of birth"
                 },
                 value: {
-                    text: data['dob-day']+"-"+
-                    data['dob-month']+"-"+
+                    text: data['dob-day']+" "+
+                    months[data['dob-month']-1]+" "+
                     data['dob-year']
                 },
                 actions: {
                     items: [
                     {
-                        href: "/contact/personal-details",
+                        href: "/contact/personal-details_c",
                         text: "Change",
                         visuallyHiddenText: "date of birth"
                     }]
@@ -676,12 +693,12 @@ bob.hoskins@simplybiz.com " %}
                     text: "Address"
                 },
                 value: {
-                    text: data['your-address-1']+", "+data['your-address-2']+", "+data['your-address-3']+", "+data['your-address-4']+", "+data['your-address-postcode']
+                    html: (data['your-address-1']+"<br/>"+(data['your-address-2']+"<br/>" if data['your-address-2'])+data['your-address-3']+"<br/>"+data['your-address-4']+"<br/>"+data['your-address-postcode'])
                 },
                 actions: {
                     items: [
                     {
-                        href: "/contact/personal-details",
+                        href: "/contact/personal-details_c",
                         text: "Change",
                         visuallyHiddenText: "address"
                     }]
@@ -737,12 +754,12 @@ bob.hoskins@simplybiz.com " %}
                     text: "Your email"
                 },
                 value: {
-                    text: (data['yourEmail-1']+" (main) " if data['yourEmail-1'])+(data['yourEmail-2']+" (alternative)" if data['yourEmail-2'])
+                    html: ("<p>"+data['yourEmail-1']+" (main)</p>" if data['yourEmail-1'])+("<p>"+data['yourEmail-2']+" (alternative)</p>" if data['yourEmail-2'])
                 },
                 actions: {
                     items: [
                     {
-                        href: "/contact/email",
+                        href: "/contact/email_c",
                         text: "Change",
                         visuallyHiddenText: "your email"
                     }]
@@ -771,12 +788,12 @@ bob.hoskins@simplybiz.com " %}
                     text: "Your phone number"
                 },
                 value: {
-                    text: (data['yourPhone2-1']+" (main) " if data['yourPhone2-1'])+(data['yourPhone2-2']+" (alternative)" if data['yourPhone2-2'])
+                    html: ("<p>"+data['yourPhone2-1']+" (main)</p>" if data['yourPhone2-1'])+("<p>"+data['yourPhone2-2']+" (alternative)</p>" if data['yourPhone2-2'])
                 },
                 actions: {
                     items: [
                     {
-                        href: "/contact/phone-2",
+                        href: "/contact/phone-2_c",
                         text: "Change",
                         visuallyHiddenText: "your phone number"
                     }]
@@ -792,12 +809,12 @@ bob.hoskins@simplybiz.com " %}
                     text: "Your phone number"
                 },
                 value: {
-                    text: (data['yourPhone-1']+" (main) " if data['yourPhone-1'])+(data['yourPhone-2']+" (alternative)" if data['yourPhone-2'])
+                    html: ("<p>"+data['yourPhone-1']+" (main)</p>" if data['yourPhone-1'])+("<p>"+data['yourPhone-2']+" (alternative)</p>" if data['yourPhone-2'])
                 },
                 actions: {
                     items: [
                     {
-                        href: "/contact/phone",
+                        href: "/contact/phone_c",
                         text: "Change",
                         visuallyHiddenText: "your phone number"
                     }]
@@ -814,7 +831,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "/contact/option-email",
+                        href: "/contact/option-email_c",
                         text: "Change",
                         visuallyHiddenText: "your email"
                     }]
@@ -838,7 +855,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "/contact/representative",
+                        href: "/contact/representative_c",
                         text: "Change",
                         visuallyHiddenText: "contact name"
                     }]
@@ -855,7 +872,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "/contact/representative",
+                        href: "/contact/representative_c",
                         text: "Change",
                         visuallyHiddenText: "relationship with contact"
                     }]
@@ -867,12 +884,12 @@ bob.hoskins@simplybiz.com " %}
                     text: "Contact phone number"
                 },
                 value: {
-                    text: data['contactPhone-1']+" (main) "+(data['contactPhone-2']+" (alternative)" if data['contactPhone-2'])
+                    html: ("<p>"+data['contactPhone-1']+" (main)</p>" if data['contactPhone-1'])+("<p>"+data['contactPhone-2']+" (alternative)</p>" if data['contactPhone-2'])
                 },
                 actions: {
                     items: [
                     {
-                        href: "/contact/rep-phone",
+                        href: "/contact/rep-phone_c",
                         text: "Change",
                         visuallyHiddenText: "contact phone number"
                     }]
@@ -884,12 +901,12 @@ bob.hoskins@simplybiz.com " %}
                     text: "Contact email"
                 },
                 value: {
-                    text: data['contactEmail-1']+" (main) "+(data['contactEmail-2']+" (alternative)" if data['contactEmail-2'])
+                    html: ("<p>"+data['contactEmail-1']+" (main)</p>" if data['contactEmail-1'])+("<p>"+data['contactEmail-2']+" (alternative)</p>" if data['contactEmail-2'])
                 },
                 actions: {
                     items: [
                     {
-                        href: "/contact/rep-email",
+                        href: "/contact/rep-email_c",
                         text: "Change",
                         visuallyHiddenText: "contact email"
                     }]

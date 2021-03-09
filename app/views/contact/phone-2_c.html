@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set backto = "/contact/check-your-answers" %}
+
+{% block content_section %}
+
+  <form class="form" action="/contact/check-your-answers" method="post">
+
+    <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What’s the best phone number to contact you on?
+        </h1>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="yourPhone2-1">
+          Main phone number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="yourPhone2-1" name="yourPhone2-1" type="text" autocomplete="yourPhone2-1" value="{{ data['yourPhone2-1'] }}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="yourPhone2-2">
+          Second phone number (optional)
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="yourPhone2-2" name="yourPhone2-2" type="text" autocomplete="yourPhone2-2" value="{{ data['yourPhone2-2'] }}">
+      </div>
+
+    </fieldset>
+
+    {{ govukButton({ text: "Save and return to review" }) }}
+  </form>
+
+{% endblock %}
