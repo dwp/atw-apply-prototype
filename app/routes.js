@@ -51,9 +51,9 @@ router.post('/contact/best-way-contact-answer', function (req, res) {
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  const bestwaycontact = req.session.data['best-way-contact']
+  const bestWayContact = req.session.data['bestWayContact']
 
-  if (bestwaycontact === 'Email') {
+  if (bestWayContact === 'Email') {
     res.redirect('/contact/email')
   } else {
     res.redirect('/contact/phone')
@@ -65,12 +65,12 @@ router.post('/contact/option-phone-answer', function (req, res) {
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  const optionphone = req.session.data['option-phone']
+  const optionPhone = req.session.data['optionPhone']
 
-  if (optionphone === 'true') {
+  if (optionPhone === 'Yes') {
     res.redirect('/contact/phone-2')
   } else {
-    res.redirect('/contact/option-phone')
+    res.redirect('/contact/check-your-answers')
   }
 })
 module.exports = router

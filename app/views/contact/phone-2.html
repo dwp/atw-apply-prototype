@@ -4,43 +4,37 @@
   Question page
 {% endblock %}
 
-{% block beforeContent %}
-  <a class="govuk-back-link" href="/contact/option-phone">Back</a>
-{% endblock %}
+{% set backto = "/contact/option-phone" %}
 
-{% block content %}
+{% block content_section %}
 
+  <form class="form" action="/contact/check-your-answers" method="post">
 
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
+    <fieldset class="govuk-fieldset">
 
-            <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What’s the best phone number to contact you on?
+        </h1>
+      </legend>
 
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  What’s the best phone number to contact you on?
-                </h1>
-              </legend>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="yourPhone2-1">
+          Main phone number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="yourPhone2-1" name="yourPhone2-1" type="text" autocomplete="yourPhone2-1" value="{{ data['yourPhone2-1'] }}">
+      </div>
 
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="address-line-1">
-                  Main phone number
-                </label>
-                <input class="govuk-input govuk-input--width-20" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="yourPhone2-2">
+          Second phone number (optional)
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="yourPhone2-2" name="yourPhone2-2" type="text" autocomplete="yourPhone2-2" value="{{ data['yourPhone2-2'] }}">
+      </div>
 
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="address-line-1">
-                  Second phone number (optional)
-                </label>
-                <input class="govuk-input govuk-input--width-20" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1"></div>
+    </fieldset>
 
-            </fieldset>
-
-    <form class="form" action="" method="post">
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-    </form>
-
-    </div>
-  </div>
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
 
 {% endblock %}

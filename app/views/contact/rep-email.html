@@ -8,7 +8,7 @@
 
 {% block content_section %}
 
-  <form class="form" action="" method="post">
+  <form class="form" action="/contact/check-your-answers" method="post">
 
     <fieldset class="govuk-fieldset">
 
@@ -24,13 +24,15 @@
         <label class="govuk-label" for="contactEmail-1">
           Main email address
         </label>
-        <input class="govuk-input" id="contactEmail-1" name="contactEmail-1" type="text" autocomplete="contactEmail-1" value="{{ data['contactEmail-1'] }}"></div>
+        <input class="govuk-input" id="contactEmail-1" name="contactEmail-1" type="text" autocomplete="contactEmail-1" value="{{ data['contactEmail-1'] }}">
+      </div>
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="contactEmail-2">
           Second email address (optional)
         </label>
-        <input class="govuk-input" id="contactEmail-2" name="contactEmail-2" type="text" autocomplete="contactEmail-2" value="{{ data['contactEmail-2'] }}"></div>
+        <input class="govuk-input" id="contactEmail-2" name="contactEmail-2" type="text" autocomplete="contactEmail-2" value="{{ data['contactEmail-2'] }}">
+      </div>
     </fieldset>
 
     {{ govukButton({ text: "Continue" }) }}
