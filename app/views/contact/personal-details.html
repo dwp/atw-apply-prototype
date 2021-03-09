@@ -26,14 +26,14 @@
               <label class="govuk-label" for="f-firstName">
                 First name
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="f-firstName" name="firstName" type="text" value="{{ data['firstname'] }}">
+              <input class="govuk-input govuk-!-width-one-half" id="f-firstName" name="firstName" type="text" value="{{ data['firstName'] }}">
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="f-lastName">
                 Last name
               </label>
-              <input class="govuk-input govuk-!-width-one-half" id="f-lastName" name="lastName" type="text" value="{{ data['lastname'] }}"/>
+              <input class="govuk-input govuk-!-width-one-half" id="f-lastName" name="lastName" type="text" value="{{ data['lastName'] }}"/>
             </div>
           </fieldset>
         </div>
@@ -50,26 +50,26 @@
             <div class="govuk-date-input" id="dob">
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="f-dob-dd">
+                  <label class="govuk-label govuk-date-input__label" for="dob-day">
                     Day
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="f-dob-dd" name="dob-dd" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-dd'] }}"/>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-day'] }}"/>
                 </div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="f-dob-mm">
+                  <label class="govuk-label govuk-date-input__label" for="dob-month">
                     Month
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-mm" name="dob-mm" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-mm'] }}"/>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-month'] }}"/>
                 </div>
               </div>
               <div class="govuk-date-input__item">
                 <div class="govuk-form-group">
-                  <label class="govuk-label govuk-date-input__label" for="f-dob-yyyy">
+                  <label class="govuk-label govuk-date-input__label" for="dob-year">
                     Year
                   </label>
-                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="f-dob-yyyy" name="dob-yyyy" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-yyyy'] }}"/>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-year'] }}"/>
                 </div>
               </div>
             </div>
@@ -88,28 +88,28 @@
                 Building and street
                 <span class="govuk-visually-hidden">line 1 of 2</span>
               </label>
-              <input class="govuk-input" id="your-address-1" name="your-address-1" type="text" value="{{ data['your-address-line-1'] }}"/>
+              <input class="govuk-input" id="your-address-1" name="your-address-1" type="text" value="{{ data['your-address-1'] }}"/>
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="your-address-2">
                 <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
               </label>
-              <input class="govuk-input" id="your-address-2" name="your-address-2" type="text" value="{{ data['your-address-line-2'] }}"/>
+              <input class="govuk-input" id="your-address-2" name="your-address-2" type="text" value="{{ data['your-address-2'] }}"/>
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="your-address-3">
                 Town or city
               </label>
-              <input class="govuk-input govuk-!-width-two-thirds" id="your-address-3" name="your-address-3" type="text" value="{{ data['your-address-line-3'] }}"/>
+              <input class="govuk-input govuk-!-width-two-thirds" id="your-address-3" name="your-address-3" type="text" value="{{ data['your-address-3'] }}"/>
             </div>
 
             <div class="govuk-form-group">
               <label class="govuk-label" for="your-address-4">
                 County
               </label>
-              <input class="govuk-input govuk-!-width-two-thirds" id="your-address-4" name="your-address-4" type="text" value="{{ data['your-address-line-4'] }}"/>
+              <input class="govuk-input govuk-!-width-two-thirds" id="your-address-4" name="your-address-4" type="text" value="{{ data['your-address-4'] }}"/>
             </div>
 
             <div class="govuk-form-group">

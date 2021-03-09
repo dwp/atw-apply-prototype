@@ -645,7 +645,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/personal-details",
                         text: "Change",
                         visuallyHiddenText: "name"
                     }]
@@ -657,14 +657,14 @@ bob.hoskins@simplybiz.com " %}
                     text: "Date of birth"
                 },
                 value: {
-                    text: data['dob-dd']+"-"+
-                    data['dob-mm']+"-"+
-                    data['dob-yyyy']
+                    text: data['dob-day']+"-"+
+                    data['dob-month']+"-"+
+                    data['dob-year']
                 },
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/personal-details",
                         text: "Change",
                         visuallyHiddenText: "date of birth"
                     }]
@@ -681,7 +681,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/personal-details",
                         text: "Change",
                         visuallyHiddenText: "address"
                     }]
@@ -698,7 +698,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/who-contact",
                         text: "Change",
                         visuallyHiddenText: "who can we contact about your application"
                     }]
@@ -721,7 +721,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/best-way-contact",
                         text: "Change",
                         visuallyHiddenText: "what’s the best way to contact you"
                     }]
@@ -742,9 +742,9 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/email",
                         text: "Change",
-                        visuallyHiddenText: "contact email"
+                        visuallyHiddenText: "your email"
                     }]
                 }
             },
@@ -759,9 +759,9 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/option-phone",
                         text: "Change",
-                        visuallyHiddenText: "what’s the best way to contact you"
+                        visuallyHiddenText: "can we also contact you by a phone call"
                     }]
                 }
             },
@@ -776,9 +776,9 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/phone-2",
                         text: "Change",
-                        visuallyHiddenText: "contact phone number"
+                        visuallyHiddenText: "your phone number"
                     }]
                 }
             } if data['optionPhone'] == "Yes")
@@ -797,9 +797,9 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/phone",
                         text: "Change",
-                        visuallyHiddenText: "contact phone number"
+                        visuallyHiddenText: "your phone number"
                     }]
                 }
             },
@@ -814,9 +814,9 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/option-email",
                         text: "Change",
-                        visuallyHiddenText: "contact email"
+                        visuallyHiddenText: "your email"
                     }]
                 }
             }
@@ -838,7 +838,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/representative",
                         text: "Change",
                         visuallyHiddenText: "contact name"
                     }]
@@ -855,7 +855,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/representative",
                         text: "Change",
                         visuallyHiddenText: "relationship with contact"
                     }]
@@ -872,7 +872,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/rep-phone",
                         text: "Change",
                         visuallyHiddenText: "contact phone number"
                     }]
@@ -889,7 +889,7 @@ bob.hoskins@simplybiz.com " %}
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/rep-email",
                         text: "Change",
                         visuallyHiddenText: "contact email"
                     }]
