@@ -50,6 +50,8 @@
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+{% set backto = backto | default("javascript:history.back()") %}
+{% set restart = restart | default("/start") %}
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
@@ -58,8 +60,6 @@
     },
     html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
   }) }}
-
-  {% set backto = backto | default("javascript:history.back()") %}
 
   {% block back %}
     {{ govukBackLink({
@@ -105,7 +105,7 @@
             text: "Back to contents"
           },
           {
-            href: "/start",
+            href: restart,
             text: "Restart"
           },
           {

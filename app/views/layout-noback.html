@@ -3,31 +3,31 @@
 
 {% extends "govuk/template.njk" %}
 
-{% from "govuk/components/accordion/macro.njk"           import govukAccordion %}
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
 {% from "govuk/components/back-link/macro.njk"           import govukBackLink %}
-{% from "govuk/components/breadcrumbs/macro.njk"         import govukBreadcrumbs %}
-{% from "govuk/components/button/macro.njk"              import govukButton %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/character-count/macro.njk"     import govukCharacterCount %}
-{% from "govuk/components/checkboxes/macro.njk"          import govukCheckboxes %}
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 {% from "govuk/components/date-input/macro.njk"          import govukDateInput %}
-{% from "govuk/components/details/macro.njk"             import govukDetails %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
 {% from "govuk/components/error-message/macro.njk"       import govukErrorMessage %}
 {% from "govuk/components/error-summary/macro.njk"       import govukErrorSummary %}
-{% from "govuk/components/fieldset/macro.njk"            import govukFieldset %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
 {% from "govuk/components/file-upload/macro.njk"         import govukFileUpload %}
-{% from "govuk/components/input/macro.njk"               import govukInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/inset-text/macro.njk"          import govukInsetText %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
-{% from "govuk/components/panel/macro.njk"               import govukPanel %}
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
 {% from "govuk/components/phase-banner/macro.njk"        import govukPhaseBanner %}
-{% from "govuk/components/radios/macro.njk"              import govukRadios %}
-{% from "govuk/components/select/macro.njk"              import govukSelect %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
 {% from "govuk/components/skip-link/macro.njk"           import govukSkipLink %}
 {% from "govuk/components/summary-list/macro.njk"        import govukSummaryList %}
-{% from "govuk/components/table/macro.njk"               import govukTable %}
-{% from "govuk/components/tabs/macro.njk"                import govukTabs %}
-{% from "govuk/components/tag/macro.njk"                 import govukTag %}
-{% from "govuk/components/textarea/macro.njk"            import govukTextarea %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/tag/macro.njk" import govukTag %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"        import govukWarningText %}
 
 {% block head %}
@@ -50,6 +50,7 @@
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+{% set restart = restart | default("/start") %}
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
@@ -61,11 +62,10 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-  {% block content_section %}
-  {% endblock %}
-  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% block content_section %}{% endblock %}
+    </div>
     <div class="govuk-grid-column-one-third">
       <aside id="journey-sidebar">
         <h2 class="govuk-heading-m govuk-!-margin-top-4">Get help</h2>
@@ -80,12 +80,10 @@
 
         <h2 class="govuk-heading-s">Email</h2>
 
-        <a href="mailto:dwponline.helpdesk@dwp.gov.uk"
-          >dwponline.helpdesk@dwp.gov.uk</a
-        >
+        <a href="mailto:dwponline.helpdesk@dwp.gov.uk">dwponline.helpdesk@dwp.gov.uk</a >
       </aside>
     </div>
-</div>
+  </div>
 {% endblock %}
 
 {% if useAutoStoreData %}
@@ -98,7 +96,7 @@
             text: "Back to contents"
           },
           {
-            href: "/start",
+            href: restart,
             text: "Restart"
           },
           {

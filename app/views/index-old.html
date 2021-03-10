@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    Access to Work<br/>
+    Prototypes
+    <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+  </h1>
+  <!-- {{releaseVersion | log }} -->
+  <p>
+    These are the latest prototypes for the application journey that citizens follow to apply for Access to Work benefits.
+  </p>
+
+  <h2 class="govuk-heading-m">Prototypes</h2>
+
+  <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-9">
+    <li>
+      <a href="/start.html">Full application journey</a>
+    </li>
+    <li>
+      <a href="/contact/personal-details.html">New contact journey</a>
+    </li>
+  </ul>
+
+  <div class="govuk-!-padding-top-9">
+
+    <p>For reference only:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
+      </li>
+      <li>
+        <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+      </li>
+    </ul>
+  </div>
+
+{% endblock %}
