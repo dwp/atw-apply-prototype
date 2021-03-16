@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+{% set backto = "/contact/email" %}
+
+{% block content_section %}
+
+  <form action="/contact/option-phone-answer" method="post" class="form">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Can we also contact you by a phone call?
+          </h1>
+        </legend>
+
+        <p>We’ll only do this if we cannot reach you by email.</p>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="f-optionPhone" name="optionPhone" type="radio" value="Yes" {{
+          checked( "optionPhone", "Yes" ) }}>
+            <label class="govuk-label govuk-radios__label" for="f-optionPhone">
+              Yes
+            </label>
+          </div>
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="optionPhone-2" name="optionPhone" type="radio" value="No" {{
+          checked( "optionPhone", "No" ) }}>
+              <label class="govuk-label govuk-radios__label" for="optionPhone-2">
+                No
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      {{ govukButton({ text: "Continue" }) }}
+    </form>
+
+  {% endblock %}

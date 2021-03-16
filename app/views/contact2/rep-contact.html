@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+{% set backto = "/contact2/representative" %}
+
+{% block content_section %}
+
+  <form class="form" action="/contact2/check-your-answers" method="post">
+
+    <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What's the best way to contact them?
+        </h1>
+      </legend>
+
+      <p>We will contact them some time in the next 3 weeks, between 9am and 5pm, Monday to Friday.</p>
+
+      <!-- Contact details -->
+      <div class="govuk-form-group">
+
+        <div class="govuk-checkboxes" id="f-ContactPrefs-wrapper" data-module="govuk-checkboxes">
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="ContactPrefs" name="ContactPrefs" type="checkbox" value="phone" data-aria-controls="conditional-ContactPrefs" {{
+          checked( "ContactPrefs", "phone" ) }}/>
+            <label class="govuk-label govuk-checkboxes__label" for="ContactPrefs">
+              Phone
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-ContactPrefs">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="rep-phone">
+                Phone number
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="rep-phone" name="rep-phone" type="tel" value="{{ data['rep-phone'] }}"/>
+            </div>
+          </div>
+
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="ContactPrefs-2" name="ContactPrefs" type="checkbox" value="email" data-aria-controls="conditional-ContactPrefs-2" {{
+          checked( "ContactPrefs", "email" ) }}/>
+            <label class="govuk-label govuk-checkboxes__label" for="ContactPrefs-2">
+              Email
+            </label>
+          </div>
+
+          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-ContactPrefs-2">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="rep-email">
+                Email address
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="rep-email" name="rep-email" type="email" spellcheck="false" value="{{ data['rep-email'] }}"/>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </fieldset>
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

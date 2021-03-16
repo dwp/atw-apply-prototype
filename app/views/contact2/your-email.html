@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+{% set backto = "/contact2/who-contact" %}
+
+{% block content_section %}
+
+  <form class="form" action="/contact2/your-phone" method="post">
+
+    <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What's the best email address to contact you on?
+        </h1>
+      </legend>
+
+      <p>We will only use this to contact you about your application.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="your-email"></label>
+        <input class="govuk-input" id="your-email" name="your-email" type="text" autocomplete="your-email" value="{{ data['your-email'] }}"></div>
+
+      <p>
+        <a href="">I do not have an email address</a>
+      </p>
+    </fieldset>
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

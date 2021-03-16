@@ -1,10 +1,12 @@
 {% extends "layout.html" %}
+
 {% block pageTitle %}
   Question page
 {% endblock %}
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %}
+
+{% set restart = "/start" %}
+{% set backto = "/job-status" %}
+
 {% block content_section %}
 
   <!-- Form START -->
@@ -78,7 +80,7 @@
     </div>
     <!-- Question END -->
 
-    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    {{ govukButton({ text: "Continue" }) }}
   </form>
 
 {% endblock %}

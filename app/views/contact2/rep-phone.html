@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+{% set backto = "/contact/representative" %}
+
+{% block content_section %}
+
+  <form class="form" action="/contact/rep-email" method="post">
+
+    <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What’s the best phone number to contact them on?
+        </h1>
+      </legend>
+
+      <p>We can only contact them between 9am and 5pm, Monday to Friday. We’ll contact them in the next 3 weeks.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="contactPhone-1">
+          Main phone number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="contactPhone-1" name="contactPhone-1" type="text" autocomplete="contactPhone-1" value="{{ data['contactPhone-1'] }}"></div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="contactPhone-2">
+          Second phone number (optional)
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="contactPhone-2" name="contactPhone-2" type="text" autocomplete="contactPhone-2" value="{{ data['contactPhone-2'] }}"></div>
+    </fieldset>
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

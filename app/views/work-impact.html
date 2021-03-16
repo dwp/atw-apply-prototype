@@ -4,10 +4,6 @@
   Question page
 {% endblock %}
 
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %}
-
 {% block content_section %}
 
   <!-- Form START -->
@@ -155,7 +151,7 @@
         </div>
         <!-- Form group END -->
 
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        {{ govukButton({ text: "Continue" }) }}
 
       </form>
       <!-- Form END -->

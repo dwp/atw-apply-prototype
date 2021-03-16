@@ -3,7 +3,7 @@
     Check your answers
 {% endblock %}
 
-{% set restart = "/start" %}
+{% set restart = "/" %}
 
 <!-- START Date converter -->
 {% set months = [
@@ -22,7 +22,33 @@
 ] %}
 <!-- END Date converter -->
 
-{{ data['clinicallyExtremelyVulnerable'] = "bob" }}
+<!-- START Placeholder information -->
+{% set clinicallyExtremelyVulnerable = "Yes" %}
+{% set condition = "I am registered blind" %}
+{% set helpWanted = "Yes I want help" %}
+{% set travelMethods = "Bus or tram" %}
+{% set whyCantBus = "I am registered blind and have recently been told that our office is moving  to a business park that is not served by public transport.  Getting taxi's every day would cost me more than it is worth for me to work" %}
+{% set journeyAmountBus = "8 times a week" %}
+{% set unusedTravelMethods = "<p>Bus or tram</p><p>Walking or cycling</p><p>Train or tube</p>" | safe %}
+{% set whyImpossibleBus = "I am registered blind and have recently been told that our office is moving to a business park that is not served by public transport. Getting taxi's every day would cost me more than it is worth for me to work" %}
+{% set whyImpossibleWalk = "Because I'm blind so can't ride a bike. The office is 8 miles from my home and too far to walk" %}
+{% set whyImpossibleTrain = "My office is not on a train or tube line" %}
+{% set jobHarder = "Yes" %}
+{% set harderHow = "I can't see what I'm inputting into the computer" %}
+{% set getAroundProblems = "Yes" %}
+{% set problemSolutions = "I use Dragon voice software when working at my computer" %}
+{% set knowWhatWouldHelp = "Yes" %}
+{% set whatWouldHelp = "My current version of Dragon is four years old. I would like to update it if possible" %}
+{% set howEmployed = "Employed" %}
+{% set jobTitle = "Hospital Accountant" %}
+{% set employer = "Some Hospital" %}
+{% set workAddress = "85 Caxton Place<br/>Kinton<br/>Pemshire<br/>KT1 6BN" | safe %}
+{% set currentRoleDuration = "More than 6 weeks" %}
+{% set workStartDate = "12 September 2018" %}
+{% set daysPerWeek = "5 days a week" %}
+{% set hoursPerWeek = "40 hours a week" %}
+{% set workContact = "<p>Bob Hoskins</p><p>07654123456</p><p>bob.hoskins@simplybiz.com</p>" | safe %}
+<!-- END Placeholder information -->
 
 {% block content_section %}
     <h1 class="govuk-heading-xl">
@@ -40,7 +66,7 @@
         
             key: { text: "Did you receive a letter from the NHS or have contact from your GP advising you to shield because of coronavirus (COVID-19)?" },
 
-            value: { text: data['clinicallyExtremelyVulnerable'] },
+            value: { text: clinicallyExtremelyVulnerable },
 
             actions: { items: [{ href: "#", text: "Change",
                 visuallyHiddenText: "did you receive a letter from the NHS or have contact from your GP advising you to shield because of coronavirus (COVID-19)" }]}
@@ -49,7 +75,7 @@
             {
             key: { text: "What are your conditions or disabilities?" },
 
-            value: { text: data['description'] },
+            value: { text: condition },
 
             actions: { items: [{ href: "#", text: "Change",
                 visuallyHiddenText: "what are your conditions or disabilities" }]}
@@ -71,7 +97,7 @@
                     text: "Do you want some help to get to work?"
                 },
                 value: {
-                    text: data['helpWanted']
+                    text: helpWanted
                 },
                 actions: {
                     items: [
@@ -82,14 +108,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "How do you get to work at the moment?"
                 },
                 value: {
-                    text: data['travelMethods']
+                    text: travelMethods
                 },
                 actions: {
                     items: [
@@ -100,14 +125,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            ({
                 key: {
                     text: "Why can't you carry on using your car, getting a lift or a taxi?"
                 },
                 value: {
-                    text: data['whyCant']
+                    text: whyCantCar
                 },
                 actions: {
                     items: [
@@ -118,14 +142,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "How often does your work travel include using your car, getting a lift or a taxi?"
                 },
                 value: {
-                    text: data['journeyAmount'] + " " + data['journeyFrequency']
+                    text: journeyAmountCar
                 },
                 actions: {
                     items: [
@@ -135,15 +158,14 @@
                         visuallyHiddenText: "how often does your work travel include using your car, getting a lift or a taxi"
                     }]
                 }
-            },
-
-        
-        {
+            } if journeyAmountCar),
+            
+            {
                 key: {
                     text: "Why can't you carry on catching a bus or tram?"
                 },
                 value: {
-                    text: data['whyCant']
+                    text: whyCantBus
                 },
                 actions: {
                     items: [
@@ -154,14 +176,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "How often does your work travel include catching a bus or tram?"
                 },
                 value: {
-                    text: data['journeyAmount'] + " " + data['journeyFrequency']
+                    text: journeyAmountBus
                 },
                 actions: {
                     items: [
@@ -172,14 +193,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            ({
                 key: {
                     text: "Why can't you carry on walking or cycling?"
                 },
                 value: {
-                    text: data['whyCant']
+                    text: whyCantWalk
                 },
                 actions: {
                     items: [
@@ -190,14 +210,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "How often does your work travel include walking or cycling?"
                 },
                 value: {
-                    text: data['journeyAmount'] + " " + data['journeyFrequency']
+                    text: journeyAmountWalk
                 },
                 actions: {
                     items: [
@@ -207,15 +226,14 @@
                         visuallyHiddenText: "how often does your work travel include walking or cycling"
                     }]
                 }
-            },
-
-        
-        {
+            } if journeyAmountWalk),
+            
+            ({
                 key: {
                     text: "Why can't you carry on catching a train or tube?"
                 },
                 value: {
-                    text: data['whyCant']
+                    text: whyCantTrain
                 },
                 actions: {
                     items: [
@@ -226,14 +244,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "How often does your work travel include catching a train or tube?"
                 },
                 value: {
-                    text: data['journeyAmount'] + " " + data['journeyFrequency']
+                    text: journeyAmountTrain
                 },
                 actions: {
                     items: [
@@ -243,15 +260,14 @@
                         visuallyHiddenText: "how often does your work travel include catching a train or tube"
                     }]
                 }
-            },
-
-        
-        {
+            } if journeyAmountTrain),
+            
+            ({
                 key: {
                     text: "Why can't you carry on "+data['travelMethodSomethingElse']+"?"
                 },
                 value: {
-                    text: data['whyCant']
+                    text: whyCantOther
                 },
                 actions: {
                     items: [
@@ -262,14 +278,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "How often does your work travel include "+data['travelMethodSomethingElse']+"?"
                 },
                 value: {
-                    text: data['journeyAmount'] + " " + data['journeyFrequency']
+                    text: journeyAmountOther
                 },
                 actions: {
                     items: [
@@ -279,15 +294,14 @@
                         visuallyHiddenText: "how often does your work travel include "+data['travelMethodSomethingElse']+""
                     }]
                 }
-            },
-
-        
-        {
+            } if journeyAmountOther),
+            
+            {
                 key: {
                     text: "Is it impossible for you to get to and from work using any of these?"
                 },
                 value: {
-                    text: data['unusedTravelMethods']
+                    text: unusedTravelMethods
                 },
                 actions: {
                     items: [
@@ -298,14 +312,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            ({
                 key: {
                     text: "Why can't you travel by using your car, getting a lift or a taxi?"
                 },
                 value: {
-                    text: data['whyCant']
+                    text: whyImpossibleCar
                 },
                 actions: {
                     items: [
@@ -315,15 +328,14 @@
                         visuallyHiddenText: "why can't you travel by using your car, getting a lift or a taxi"
                     }]
                 }
-            },
-
-        
-        {
+            } if whyImpossibleCar),
+            
+            {
                 key: {
                     text: "Why can't you travel by catching a bus or tram?"
                 },
                 value: {
-                    text: data['whyCant']
+                    text: whyImpossibleBus
                 },
                 actions: {
                     items: [
@@ -334,14 +346,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Why can't you travel by walking or cycling?"
                 },
                 value: {
-                    text: data['whyCant']
+                    text: whyImpossibleWalk
                 },
                 actions: {
                     items: [
@@ -352,14 +363,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Why can't you travel by catching a train or tube?"
                 },
                 value: {
-                    text: data['whyCant']
+                    text: whyImpossibleTrain
                 },
                 actions: {
                     items: [
@@ -370,14 +380,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Does your condition make it harder for you to do your job?"
                 },
                 value: {
-                    text: data['jobHarder']
+                    text: jobHarder
                 },
                 actions: {
                     items: [
@@ -388,14 +397,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Tell us how it is harder"
                 },
                 value: {
-                    text: data['harderHow']
+                    text: harderHow
                 },
                 actions: {
                     items: [
@@ -406,14 +414,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Do you do anything to get around these problems at the moment?"
                 },
                 value: {
-                    text: data['getAroundProblems']
+                    text: getAroundProblems
                 },
                 actions: {
                     items: [
@@ -424,14 +431,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Tell us what you do"
                 },
                 value: {
-                    text: data['problemSolutions']
+                    text: problemSolutions
                 },
                 actions: {
                     items: [
@@ -442,14 +448,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Do you know what you need to help you with this?"
                 },
                 value: {
-                    text: data['knowWhatWouldHelp']
+                    text: knowWhatWouldHelp
                 },
                 actions: {
                     items: [
@@ -460,14 +465,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Tell us what would help you"
                 },
                 value: {
-                    text: data['whatWouldHelp']
+                    text: whatWouldHelp
                 },
                 actions: {
                     items: [
@@ -493,7 +497,7 @@
                     text: "Employment status"
                 },
                 value: {
-                    text: data['howEmployed']
+                    text: howEmployed
                 },
                 actions: {
                     items: [
@@ -504,14 +508,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Job title"
                 },
                 value: {
-                    text: data['jobTitle']
+                    text: jobTitle
                 },
                 actions: {
                     items: [
@@ -522,14 +525,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Employer"
                 },
                 value: {
-                    text: data['employer']
+                    text: employer
                 },
                 actions: {
                     items: [
@@ -540,14 +542,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Address"
                 },
                 value: {
-                    text: data['address-1']+", "+data['address-2']+", "+data['address-3']+", "+data['address-4']+", "+data['address-postcode']
+                    text: workAddress
                 },
                 actions: {
                     items: [
@@ -558,14 +559,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "How long have you been in your current job or role?"
                 },
                 value: {
-                    text: data['currentRoleDuration']
+                    text: currentRoleDuration
                 },
                 actions: {
                     items: [
@@ -576,16 +576,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Work start date"
                 },
                 value: {
-                    text: data['startDateMoreThan6Weeks-dd']+"-"+
-                    data['startDateMoreThan6Weeks-mm']+"-"+
-                    data['startDateMoreThan6Weeks-yyyy']
+                    text: workStartDate
                 },
                 actions: {
                     items: [
@@ -596,14 +593,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "How many days a week do you usually work?"
                 },
                 value: {
-                    text: data['daysPerWeek']
+                    text: daysPerWeek
                 },
                 actions: {
                     items: [
@@ -614,14 +610,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "How many hours a week do you usually work?"
                 },
                 value: {
-                    text: data['hoursPerWeek']
+                    text: hoursPerWeek
                 },
                 actions: {
                     items: [
@@ -632,14 +627,13 @@
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Your workplace contact"
                 },
                 value: {
-                    text: data['workContactName']+"\n"+data['workContactEmail']+"\n"+data['workContactNumber']
+                    text: workContact
                 },
                 actions: {
                     items: [
@@ -659,7 +653,7 @@
     <h2 class="govuk-heading-m">Your personal details</h2>
 
     {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
+        classes: 'govuk-!-margin-bottom-0',
         rows: [{
                 key: {
                     text: "Name"
@@ -670,140 +664,267 @@
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/personal-details_c",
                         text: "Change",
                         visuallyHiddenText: "name"
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Date of birth"
                 },
                 value: {
-                    text: data['dob-dd']+"-"+
-                    data['dob-mm']+"-"+
-                    data['dob-yyyy']
+                    text: data['dob-day']+" "+
+                    months[data['dob-month']-1]+" "+
+                    data['dob-year']
                 },
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/personal-details_c",
                         text: "Change",
                         visuallyHiddenText: "date of birth"
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
                     text: "Address"
                 },
                 value: {
-                    text: data['condition']
+                    html: (data['your-address-1']+"<br/>"+(data['your-address-2']+"<br/>" if data['your-address-2'])+data['your-address-3']+"<br/>"+data['your-address-4']+"<br/>"+data['your-address-postcode'])
                 },
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/personal-details_c",
                         text: "Change",
                         visuallyHiddenText: "address"
                     }]
                 }
             },
-
-        
-        {
+            
+            {
                 key: {
-                    text: "Who do you want to be contacted about your condition award or application?"
+                    text: "Who can we contact about your application?"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['whoToContact']
                 },
                 actions: {
                     items: [
                     {
-                        href: "#",
+                        href: "/contact/who-contact",
                         text: "Change",
-                        visuallyHiddenText: "who do you want to be contacted about your condition award or application"
-                    }]
-                }
-            },
-
-        
-        {
-                key: {
-                    text: "Contact name"
-                },
-                value: {
-                    text: data['condition']
-                },
-                actions: {
-                    items: [
-                    {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "contact name"
-                    }]
-                }
-            },
-
-        
-        {
-                key: {
-                    text: "Contact phone number"
-                },
-                value: {
-                    text: data['condition']
-                },
-                actions: {
-                    items: [
-                    {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "contact phone number"
-                    }]
-                }
-            },
-
-        
-        {
-                key: {
-                    text: "Relationship with contact"
-                },
-                value: {
-                    text: data['condition']
-                },
-                actions: {
-                    items: [
-                    {
-                        href: "#",
-                        text: "Change",
-                        visuallyHiddenText: "relationship with contact"
+                        visuallyHiddenText: "who can we contact about your application"
                     }]
                 }
             }
         ]})
     }}
 
+    <!-- IF Contact: Me -->
+    {% if data['whoToContact'] == "Me" %}
+        {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-0',
+        rows: [{
+                key: {
+                    text: "What’s the best way to contact you?"
+                },
+                value: {
+                    text: data['bestWayContact']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/best-way-contact",
+                        text: "Change",
+                        visuallyHiddenText: "what’s the best way to contact you"
+                    }]
+                }
+            }
+        ]})
+    }}
+        {% if data['bestWayContact'] == "Email" %}
+            {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [{
+                key: {
+                    text: "Your email"
+                },
+                value: {
+                    html: ("<p>"+data['yourEmail-1']+" (main)</p>" if data['yourEmail-1'])+("<p>"+data['yourEmail-2']+" (alternative)</p>" if data['yourEmail-2'])
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/email_c",
+                        text: "Change",
+                        visuallyHiddenText: "your email"
+                    }]
+                }
+            },
+
+            {
+                key: {
+                    text: "Can we also contact you by a phone call?"
+                },
+                value: {
+                    text: data['optionPhone']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/option-phone",
+                        text: "Change",
+                        visuallyHiddenText: "can we also contact you by a phone call"
+                    }]
+                }
+            },
+            
+            ({
+                key: {
+                    text: "Your phone number"
+                },
+                value: {
+                    html: ("<p>"+data['yourPhone2-1']+" (main)</p>" if data['yourPhone2-1'])+("<p>"+data['yourPhone2-2']+" (alternative)</p>" if data['yourPhone2-2'])
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/phone-2_c",
+                        text: "Change",
+                        visuallyHiddenText: "your phone number"
+                    }]
+                }
+            } if data['optionPhone'] == "Yes")
+        ]})
+    }}
+        {% else %}
+            {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [{
+                key: {
+                    text: "Your phone number"
+                },
+                value: {
+                    html: ("<p>"+data['yourPhone-1']+" (main)</p>" if data['yourPhone-1'])+("<p>"+data['yourPhone-2']+" (alternative)</p>" if data['yourPhone-2'])
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/phone_c",
+                        text: "Change",
+                        visuallyHiddenText: "your phone number"
+                    }]
+                }
+            },
+            
+            {
+                key: {
+                    text: "Your email"
+                },
+                value: {
+                    text: (data['yourEmail2-1'] if data['yourEmail2-1'])
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/option-email_c",
+                        text: "Change",
+                        visuallyHiddenText: "your email"
+                    }]
+                }
+            }
+        ]})
+    }}
+        {% endif %}
+
+        <!-- IF Contact: Someone else -->
+    {% else %}
+        {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [{
+                key: {
+                    text: "Contact name"
+                },
+                value: {
+                    text: data['contactName']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/representative_c",
+                        text: "Change",
+                        visuallyHiddenText: "contact name"
+                    }]
+                }
+            },
+            
+            {
+                key: {
+                    text: "Relationship with contact"
+                },
+                value: {
+                    text: data['contactRelationship']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/representative_c",
+                        text: "Change",
+                        visuallyHiddenText: "relationship with contact"
+                    }]
+                }
+            },
+            
+            {
+                key: {
+                    text: "Contact phone number"
+                },
+                value: {
+                    html: ("<p>"+data['contactPhone-1']+" (main)</p>" if data['contactPhone-1'])+("<p>"+data['contactPhone-2']+" (alternative)</p>" if data['contactPhone-2'])
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/rep-phone_c",
+                        text: "Change",
+                        visuallyHiddenText: "contact phone number"
+                    }]
+                }
+            },
+            
+            {
+                key: {
+                    text: "Contact email"
+                },
+                value: {
+                    html: ("<p>"+data['contactEmail-1']+" (main)</p>" if data['contactEmail-1'])+("<p>"+data['contactEmail-2']+" (alternative)</p>" if data['contactEmail-2'])
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "/contact/rep-email_c",
+                        text: "Change",
+                        visuallyHiddenText: "contact email"
+                    }]
+                }
+            }
+        ]})
+    }}
+    {% endif %}
+
     <!-- Section END -->
 
     <!-- Answers END -->
 
-    <!-- <h2 class="govuk-heading-m">Now send your application</h2> -->
-
-    <p>
-        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
-    </p>
-
-    <form action="/declaration" method="post" novalidate="novalidate">
+    <form action="/contact/declaration" method="post" novalidate="novalidate">
         <input type="hidden" name="answers-checked" value="true"/>
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
-        </button>
+        {{ govukButton({ text: "Continue" }) }}
     </form>
 {% endblock %}

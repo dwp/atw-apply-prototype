@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+{% set backto = "/contact/who-contact" %}
+
+{% block content_section %}
+
+  <form action="/contact/best-way-contact-answer" method="post" class="form">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What’s the best way to contact you?
+          </h1>
+        </legend>
+
+        <p>We can only contact you between 9am and 5pm, Monday to Friday. We’ll contact you in the next 3 weeks.</p>
+
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="f-bestWayContact" name="bestWayContact" type="radio" value="Email" {{
+          checked( "bestWayContact", "Email" ) }}>
+            <label class="govuk-label govuk-radios__label" for="f-bestWayContact">
+              Email
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="bestWayContact-2" name="bestWayContact" type="radio" value="Phone" {{
+          checked( "bestWayContact", "Phone" ) }}>
+            <label class="govuk-label govuk-radios__label" for="bestWayContact-2">
+              Phone call
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="bestWayContact-3" name="bestWayContact" type="radio" value="Text message" {{
+          checked( "bestWayContact", "Text message" ) }}>
+            <label class="govuk-label govuk-radios__label" for="bestWayContact-3">
+              Text message
+            </label>
+          </div>
+        </div>
+
+      </fieldset>
+    </div>
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

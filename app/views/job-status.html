@@ -1,22 +1,27 @@
 {% extends "layout.html" %}
+
 {% block pageTitle %}
   Question page
 {% endblock %}
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %}
+
+{% set restart = "/start" %}
+
 {% block content_section %}
 
-  <form class="form" action="/employed" method="post">
-    <!-- Radios -->
+  <!-- Form START -->
+  <form class="form" action="/job-status-answer" method="post">
+
     <div class="govuk-form-group">
+
       <fieldset class="govuk-fieldset" aria-describedby="job-status-hint">
+
         <!-- Question -->
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">Your employment status</h1>
         </legend>
 
         <div class="govuk-radios">
+
           <!-- Option 1 -->
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="f-howEmployed" name="howEmployed" type="radio" value="employed" {{ checked(
@@ -43,6 +48,7 @@
               Director of a limited company
             </label>
           </div>
+
         </div>
       </fieldset>
     </div>
@@ -75,7 +81,7 @@
       </div>
     </details>
 
-    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    {{ govukButton({ text: "Continue" }) }}
   </form>
 
 {% endblock %}

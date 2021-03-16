@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+{% set backto = "/contact/check-your-answers" %}
+
+{% block content_section %}
+
+  <form class="form" action="/contact/check-your-answers" method="post">
+    <fieldset class="govuk-fieldset">
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="more-detail">
+            Who can we contact?
+          </label>
+        </h1>
+
+        <p>This should be someone you trust and who can talk about what support you need.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contactName">
+            Their name
+          </label>
+          <input class="govuk-input" id="contactName" name="contactName" type="text" autocomplete="contactName" value="{{ data['contactName'] }}"></div>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="contactRelationship">
+          Your relationship with this person
+        </label>
+        <textarea class="govuk-textarea" id="contactRelationship" name="contactRelationship" rows="5">{{ data['contactRelationship'] }}</textarea>
+
+      </fieldset>
+
+      {{ govukButton({ text: "Save and return to review" }) }}
+    </form>
+
+  {% endblock %}

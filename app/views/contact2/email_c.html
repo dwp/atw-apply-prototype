@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+{% set backto = "/contact/check-your-answers" %}
+
+{% block content_section %}
+
+  <form class="form" action="/contact/check-your-answers" method="post">
+
+    <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What’s the best email address to contact you on?
+        </h1>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="yourEmail-1">
+          Main email address
+        </label>
+        <input class="govuk-input" id="yourEmail-1" name="yourEmail-1" type="text" autocomplete="yourEmail-1" value="{{ data['yourEmail-1'] }}">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="yourEmail-2">
+          Second email address (optional)
+        </label>
+        <input class="govuk-input" id="yourEmail-2" name="yourEmail-2" type="text" autocomplete="yourEmail-2" value="{{ data['yourEmail-2'] }}">
+      </div>
+    </fieldset>
+
+    {{ govukButton({ text: "Save and return to review" }) }}
+  </form>
+
+{% endblock %}

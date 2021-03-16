@@ -4,6 +4,8 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 
+/* === Main journey routes === */
+
 // Help with travel
 router.post('/help-with-travel-answer', function (req, res) {
   // Get the answer from session data
@@ -31,10 +33,25 @@ router.post('/work-impact-answer', function (req, res) {
   }
 })
 
+// Job status
+router.post('/job-status-answer', function (req, res) {
+
+  const howEmployed = req.session.data['howEmployed']
+
+  if (howEmployed === 'employed') {
+    res.redirect('/employed')
+  } else if (howEmployed === 'selfEmployed') {
+    res.redirect('/self-employed')
+  } else {
+    res.redirect('/company-director')
+  }
+})
+
+
+/* === Contact routes === */
+
+// Who to contact
 router.post('/contact/who-contact-answer', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
 
   const whoToContact = req.session.data['whoToContact']
 
@@ -45,11 +62,8 @@ router.post('/contact/who-contact-answer', function (req, res) {
   }
 })
 
-
+// Best way to contact
 router.post('/contact/best-way-contact-answer', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
 
   const bestWayContact = req.session.data['bestWayContact']
 
@@ -60,10 +74,8 @@ router.post('/contact/best-way-contact-answer', function (req, res) {
   }
 })
 
+// Phone yes or no
 router.post('/contact/option-phone-answer', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
 
   const optionPhone = req.session.data['optionPhone']
 
@@ -73,4 +85,20 @@ router.post('/contact/option-phone-answer', function (req, res) {
     res.redirect('/contact/check-your-answers')
   }
 })
+
+
+/* === Contact2 routes === */
+
+// Who to contact
+router.post('/contact2/who-contact-answer', function (req, res) {
+
+  const whoToContact2 = req.session.data['whoToContact2']
+
+  if (whoToContact2 === 'Me') {
+    res.redirect('/contact2/your-email')
+  } else {
+    res.redirect('/contact2/representative')
+  }
+})
+
 module.exports = router

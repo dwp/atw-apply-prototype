@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+{% set backto = "/contact2/your-email" %}
+
+{% block content_section %}
+
+  <form action="/contact2/check-your-answers" method="post" class="form">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Can we also contact you by a phone call?
+          </h1>
+        </legend>
+
+        <p>We will call you to discuss your application.</p>
+
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <!-- Option 1-->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-phone" name="contact-phone" type="radio" value="yes" {{
+                checked( "contact-phone" , "yes" ) }} data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact-phone">
+              Yes
+            </label>
+          </div>
+
+          <!-- Option 1 options -->
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="travel-help-options-hint">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="your-phone">
+                    Phone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-half" id="your-phone" name="your-phone" type="tel" value="{{ data['your-phone'] }}"/>
+                </div>
+
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="sms-alert-option" name="sms-alert-option" type="checkbox" value="yes" {{
+                checked( "sms-alert-option" , "yes" ) }}/>
+                    <label class="govuk-label govuk-checkboxes__label" for="sms-alert-option">
+                      SMS alerts only
+                      <div id="sms-alert-option-hint" class="govuk-hint">
+                        I can only use my phone for sms alerts due to my health condition or disability
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+          </div>
+
+          <!-- Option 2-->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-2" name="contact-phone" type="radio" value="no" {{
+                checked( "contact-phone" , "no" ) }}>
+            <label class="govuk-label govuk-radios__label" for="contact-2">
+              No
+            </label>
+          </div>
+
+        </div>
+
+      </fieldset>
+    </div>
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

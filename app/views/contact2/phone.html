@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+{% set backto = "/contact/best-way-contact" %}
+
+{% block content_section %}
+
+  <form class="form" action="/contact/option-email" method="post">
+
+    <fieldset class="govuk-fieldset">
+
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What’s the best phone number to contact you on?
+        </h1>
+      </legend>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="yourPhone-1">
+          Main phone number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="yourPhone-1" name="yourPhone-1" type="text" autocomplete="yourPhone-1" value="{{ data['yourPhone-1'] }}"></div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="yourPhone-2">
+          Second phone number (optional)
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="yourPhone-2" name="yourPhone-2" type="text" autocomplete="yourPhone-2" value="{{ data['yourPhone-2'] }}"></div>
+
+    </fieldset>
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}
