@@ -769,7 +769,7 @@
                     text: "Your phone number"
                 },
                 value: {
-                    html: data['your-phone'] + ("<p>(SMS alerts only)</p>" if data['sms-alert-option'] == "true")
+                    html: data['your-phone'] + ("<p>(Text message alerts only)</p>" if data['sms-alert-option'] == "true")
                 },
                 actions: {
                     items: [
@@ -779,7 +779,7 @@
                         visuallyHiddenText: "your phone number"
                     }]
                 }
-            } if data['contact-phone'] == "yes")
+            } if data['contact-phone'] == "Yes")
         ]})
     }}
 
