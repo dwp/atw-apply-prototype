@@ -22,8 +22,6 @@
 ] %}
 <!-- END Date converter -->
 
-{{ data['clinicallyExtremelyVulnerable'] = "bob" }}
-
 {% block content_section %}
     <h1 class="govuk-heading-xl">
         Check your answers before sending your application
@@ -583,9 +581,9 @@
                     text: "Work start date"
                 },
                 value: {
-                    text: data['startDateMoreThan6Weeks-dd']+"-"+
-                    data['startDateMoreThan6Weeks-mm']+"-"+
-                    data['startDateMoreThan6Weeks-yyyy']
+                    text: (data['startDateMoreThan6Weeks-dd']+" "+
+                    months[data['startDateMoreThan6Weeks-mm']-1]+" "+
+                    data['startDateMoreThan6Weeks-yyyy'] if data['startDateMoreThan6Weeks-dd'])
                 },
                 actions: {
                     items: [
@@ -639,7 +637,7 @@
                     text: "Your workplace contact"
                 },
                 value: {
-                    text: data['workContactName']+"\n"+data['workContactEmail']+"\n"+data['workContactNumber']
+                    text: (data['workContactName']+"\n"+data['workContactEmail']+"\n"+data['workContactNumber'] if (data['workContactName'] or data['workContactEmail'] or data['workContactNumber']))
                 },
                 actions: {
                     items: [
@@ -659,13 +657,13 @@
     <h2 class="govuk-heading-m">Your personal details</h2>
 
     {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
+        classes: 'govuk-!-margin-bottom-0',
         rows: [{
                 key: {
                     text: "Name"
                 },
                 value: {
-                    text: data['firstName']+" "+data['lastName']
+                    text: (data['firstName']+" "+data['lastName'] if (data['firstName'] or data['lastName']))
                 },
                 actions: {
                     items: [
@@ -683,9 +681,9 @@
                     text: "Date of birth"
                 },
                 value: {
-                    text: data['dob-dd']+"-"+
-                    data['dob-mm']+"-"+
-                    data['dob-yyyy']
+                    text: (data['dob-dd']+" "+
+                    months[data['dob-mm']-1]+" "+
+                    data['dob-yyyy'] if data['dob-dd'])
                 },
                 actions: {
                     items: [
@@ -703,7 +701,7 @@
                     text: "Address"
                 },
                 value: {
-                    text: data['condition']
+                    html: (data['address-line-1']+"<br/>"+(data['address-line-2']+"<br/>" if data['address-line-2'])+data['address-town']+"<br/>"+data['address-county']+"<br/>"+data['address-postcode'])
                 },
                 actions: {
                     items: [
@@ -721,7 +719,7 @@
                     text: "Who do you want to be contacted about your condition award or application?"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['contact']
                 },
                 actions: {
                     items: [
@@ -731,15 +729,60 @@
                         visuallyHiddenText: "who do you want to be contacted about your condition award or application"
                     }]
                 }
-            },
+            }
+        ]})
+    }}
 
-        
-        {
+    <!-- IF Contact: Me -->
+    {% if data['contact'] == "Yourself" %}
+        {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [{
+                key: {
+                    text: "Your email"
+                },
+                value: {
+                    text: data['contact-by-email']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "your email"
+                    }]
+                }
+            },
+            
+            {
+                key: {
+                    text: "Your phone number"
+                },
+                value: {
+                    text: data['contact-by-phone']
+                },
+                actions: {
+                    items: [
+                    {
+                        href: "#",
+                        text: "Change",
+                        visuallyHiddenText: "your phone number"
+                    }]
+                }
+            }
+        ]})
+    }}
+
+        <!-- IF Contact: Someone else -->
+    {% else %}
+        {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [{
                 key: {
                     text: "Contact name"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['f-representativeName']
                 },
                 actions: {
                     items: [
@@ -757,7 +800,7 @@
                     text: "Contact phone number"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['f-representativeNumber']
                 },
                 actions: {
                     items: [
@@ -775,7 +818,7 @@
                     text: "Relationship with contact"
                 },
                 value: {
-                    text: data['condition']
+                    text: data['f-representativeRelationship']
                 },
                 actions: {
                     items: [
@@ -788,6 +831,7 @@
             }
         ]})
     }}
+    {% endif %}
 
     <!-- Section END -->
 
