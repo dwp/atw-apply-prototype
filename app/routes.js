@@ -7,7 +7,7 @@ const router = express.Router()
 /* === Main journey routes === */
 
 // Help with travel
-router.post('/help-with-travel-answer', function (req, res) {
+router.post('/main/help-with-travel-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -15,35 +15,35 @@ router.post('/help-with-travel-answer', function (req, res) {
   const helpWanted = req.session.data['helpWanted']
 
   if (helpWanted === 'no') {
-    res.redirect('/work-impact')
+    res.redirect('/main/work-impact')
   } else {
-    res.redirect('/car-lift-or-taxi')
+    res.redirect('/main/car-lift-or-taxi')
   }
 })
 
 // Work impact
-router.post('/work-impact-answer', function (req, res) {
+router.post('/main/work-impact-answer', function (req, res) {
 
   const jobHarder = req.session.data['jobHarder']
 
   if (jobHarder === 'no') {
-    res.redirect('/not-eligible')
+    res.redirect('/main/not-eligible')
   } else {
-    res.redirect('/job-status')
+    res.redirect('/main/job-status')
   }
 })
 
 // Job status
-router.post('/job-status-answer', function (req, res) {
+router.post('/main/job-status-answer', function (req, res) {
 
   const howEmployed = req.session.data['howEmployed']
 
   if (howEmployed === 'employed') {
-    res.redirect('/employed')
+    res.redirect('/main/employed')
   } else if (howEmployed === 'selfEmployed') {
-    res.redirect('/self-employed')
+    res.redirect('/main/self-employed')
   } else {
-    res.redirect('/company-director')
+    res.redirect('/main/company-director')
   }
 })
 

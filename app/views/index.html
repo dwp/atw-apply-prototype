@@ -1,34 +1,58 @@
-{% extends "layout-noback.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% set restart = "/" %}
-{% set releaseVersion = "v2.0.1" %}
-
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-xl">
+    Access to Work<br/>
+    Prototypes
+    <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+  </h1>
+  <!-- {{releaseVersion | log }} -->
+  <p class="govuk-!-padding-bottom-6">
+    These are the latest prototypes for the application journey that citizens follow to apply for Access to Work benefits.
+  </p>
 
-      <div class="govuk-!-margin-bottom-6">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
-          Access to Work</h1>
-        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">User research demo</h2>
-        <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
-      </div>
+  <div class="govuk-!-padding-bottom-9">
 
-      <!-- {{releaseVersion | log }} -->
-      <p class="govuk-body govuk-!-margin-bottom-9">
-        Thank you for agreeing to take part in our usability test. Please wait here until you are asked to start.
-      </p>
+    <h2 class="govuk-heading-s">Main prototype</h2>
 
-      <form class="form" action="/contact2/personal-details" method="post">
-        {{ govukButton({ text: "Start demo" }) }}
-      </form>
+    <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-3">
+      <li>
+        <a href="/main/start.html">Full application journey</a>
+      </li>
+    </ul>
 
-    </div>
+    <h2 class="govuk-heading-s">Test prototypes</h2>
+
+    <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-4">
+      <li>
+        UR session 1 (Contact info 1) -
+        <a href="/contact/start.html">View prototype</a>
+      </li>
+      <li>
+        UR session 2 (Contact info 2) -
+        <a href="/contact2/start.html">View prototype</a>
+      </li>
+    </ul>
+
+  </div>
+
+  <div>
+
+    <p>For reference only:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
+      </li>
+      <li>
+        <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+      </li>
+    </ul>
   </div>
 
 {% endblock %}

@@ -1,59 +1,67 @@
-{% extends "layout.html" %}
+{% extends "layout-noback.html" %}
 {% block pageTitle %}
   Question page
 {% endblock %}
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %}
+
+{% set restart = "start" %}
+{% set backto = "personal-details" %}
+
 {% block content_section %}
 
-  <form class="form" action="/alternative-car-lift-or-taxi" method="post">
+  <form class="form" action="contact" method="post">
+
     <!-- Checkboxes -->
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+
+        <!-- Question -->
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            Is it impossible for you to get to and from work using any of these?
+            Do any of these apply to you?
           </h1>
         </legend>
 
-        <div id="waste-hint" class="govuk-hint">
-          Tick all methods that you can't use at the moment.
+        <div id="cev-options-hint" class="govuk-hint">
+          Select all that apply
         </div>
 
         <div class="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="f-unusedTravelMethods" name="unusedTravelMethods[]" type="checkbox" value="bus"/>
             <label class="govuk-label govuk-checkboxes__label" for="f-unusedTravelMethods">
-              Bus or tram
+              Shielding because of coronavirus (COVID-19) - this means you were contacted by the NHS or your GP and told to shield
             </label>
           </div>
 
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="unusedTravelMethods-2" name="unusedTravelMethods[]" type="checkbox" value="walking"/>
             <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-2">
-              Walking or cycling
+              Started a job or about to start a job through the
+              <a href="">Young Person's Guarantee Scotland</a>
             </label>
           </div>
 
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="unusedTravelMethods-3" name="unusedTravelMethods[]" type="checkbox" value="train"/>
             <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-3">
-              Train or tube
+              Started a job or about to start a job through the
+              <a href="">Kickstart Scheme</a>
             </label>
           </div>
 
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="unusedTravelMethods-4" name="unusedTravelMethods[]" type="checkbox" value="none"/>
             <label class="govuk-label govuk-checkboxes__label" for="unusedTravelMethods-4">
-              No, you could use all of these
+              None of these
             </label>
           </div>
         </div>
       </fieldset>
     </div>
 
-    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
   </form>
 
 {% endblock %}

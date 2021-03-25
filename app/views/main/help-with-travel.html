@@ -2,12 +2,13 @@
 {% block pageTitle %}
   Question page
 {% endblock %}
-{% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:history.back()">Back</a>
-{% endblock %}
+
+{% set restart = "start" %}
+{% set backto = "condition" %}
+
 {% block content_section %}
 
-  <form class="form" action="/help-with-travel-answer" method="post">
+  <form class="form" action="help-with-travel-answer" method="post">
     <!-- Radios -->
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset">

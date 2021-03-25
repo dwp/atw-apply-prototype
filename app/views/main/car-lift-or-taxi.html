@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "start" %}
+
+{% block content_section %}
+
+  <!-- Question START -->
+  <form class="form" {% block action %} action="bus-or-tram" {% endblock %} method="post">
+    <div class="govuk-form-group">
+      <p class="govuk-body">
+        Why can't you carry on
+        {% block method %}
+          using your car, getting a lift or a taxi{% endblock %}?
+      </p>
+
+      <!-- Text input -->
+      <textarea class="govuk-textarea" id="f-whyCant" name="whyCant" rows="5" aria-describedby="f-whyCant-hint">{{ data['whyCant'] }}</textarea>
+    </div>
+
+    <div class="govuk-form-group">
+      <p class="govuk-body">
+        How often does your work travel include
+        {% block method2 %}
+          using your car, getting a lift or a taxi{% endblock %}?
+      </p>
+      <span class="govuk-hint">Count each journey separately, eg if you go to and from work the same way that would be 2 journeys a day</span >
+
+      <!-- Text input -->
+      <input class="govuk-input govuk-input--width-4" id="f-journeyAmount" name="journeyAmount" type="text" aria-describedby="f-journeyAmount-hint" value="{{ data['journeyAmount'] }}"/>
+    </div>
+
+    <p class="govuk-body">times</p>
+
+    <!-- Radios -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <div class="govuk-radios govuk-radios">
+          <!-- Option 1-->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="f-journeyFrequency" name="journeyFrequency" type="radio" value="times a week" {{ checked( "journeyFrequency" , "week" ) }} ​="​">
+            <label class="govuk-label govuk-radios__label" for="f-journeyFrequency">
+              a week
+            </label>
+          </div>
+
+          <!-- Option 2-->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="f-journeyFrequency-2" name="journeyFrequency" type="radio" value="times a month" {{ checked( "journeyFrequency" , "month" ) }}>
+            <label class="govuk-label govuk-radios__label" for="f-journeyFrequency-2">
+              a month
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+  </form>
+
+{% endblock %}

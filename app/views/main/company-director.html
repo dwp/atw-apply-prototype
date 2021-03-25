@@ -4,10 +4,13 @@
   Question page
 {% endblock %}
 
+{% set restart = "start" %}
+{% set backto = "job-status" %}
+
 {% block content_section %}
 
   <!-- Form START -->
-  <form class="form" action="/work" method="post">
+  <form class="form" action="work" method="post">
 
     <div class="govuk-form-group">
 
@@ -20,10 +23,10 @@
 
         <!-- Your job title -->
         <div class="govuk-form-group">
-          <label class="govuk-label" for="f-jobTitle">
-            Your job title
+          <label class="govuk-label" for="f-companyName">
+            Your company name
           </label>
-          <input class="govuk-input govuk-!-width-one-half" id="f-jobTitle" name="jobTitle" type="text" value="{{ data['jobTitle'] }}"/>
+          <input class="govuk-input govuk-!-width-one-half" id="f-companyName" name="companyName" type="text" value="{{ data['companyName'] }}"/>
         </div>
 
         <!-- Radios -->
@@ -34,7 +37,7 @@
 
             <!-- Question -->
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              Is your work address different to your home address?
+              Is your company address different to your home address?
             </legend>
 
             <!-- Option 1-->
