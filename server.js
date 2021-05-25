@@ -212,6 +212,19 @@ app.post('/prototype-admin/clear-data', function (req, res) {
   res.render('prototype-admin/clear-data-success')
 })
 
+// Clear all data in session if you open /fitler/filter
+app.post('/filter/filter', function (req, res) {
+  req.session.data = {}
+  res.render('filter/filter')
+})
+
+// Clear all data in session if you open /filter/filter2
+app.post('/filter/filter2', function (req, res) {
+  req.session.data = {}
+  res.render('filter/filter2')
+})
+
+
 // Redirect root to /docs when in promo mode.
 if (promoMode === 'true') {
   console.log('Prototype Kit running in promo mode')
