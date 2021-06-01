@@ -42,3 +42,17 @@ Add
 Add
 // Enable logging, options: true, false, get or post
   useLogging: 'true'
+
+## Radio Button Redirect
+
+Installed radioButtonRedirect package  https://github.com/abbott567/radio-button-redirect
+
+You can tell the prototype to redirect to a page if a radio button is selected by adding a tilde(~) to the value in the HTML.
+
+For example, the following code would cause the application to redirect to /page1 if the Yes radio button was selected:
+
+<input class="govuk-radios__input" name="test" type="radio" value="yes~/page1">
+
+The tilde(~) and the link are not stored in the session. So if you called {{data.test}} in the view it will only contain the value of yes, not yes~/page1.
+
+If you don't add a tilde(~) nothing changes and everything just defaults to the original prototype kit behaviour.
