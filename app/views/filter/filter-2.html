@@ -1,0 +1,360 @@
+{% extends "_blank.html" %}
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "start" %}
+
+{% block content_section %}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Document
+       </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Tab 2
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+        Tab 3
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-year">
+        Tab 4
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="past-day">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+
+
+
+
+
+
+
+
+
+
+
+        <div class="moj-filter">
+
+        <div>
+
+            <div class="moj-filter__options">
+  <form class="form" action="" method="post" >
+              <button class="govuk-button" data-module="govuk-button">
+                Apply selected filters
+              </button>
+  <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+
+
+
+
+
+
+              <div class="govuk-form-group">
+
+                <fieldset class="govuk-fieldset">
+
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+
+                    Document type
+
+                  </legend>
+
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+
+
+                    {% include "./include/document-types-2.html" %}
+
+                </fieldset>
+
+                  <br>
+
+                  <a class="govuk-link app-c-back-to-top dont-print" href="#top" >
+        <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+        </svg>
+        Back to top
+    </a>
+              </div>
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Document</h2>
+
+
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Name</th>
+                  <th scope="col" class="govuk-table__header">Document type</th>
+                  <th scope="col" class="govuk-table__header">From reference</th>
+                  <th scope="col" class="govuk-table__header">Date scanned</th>
+                  <th scope="col" class="govuk-table__header">Action</th>
+                </tr>
+              </thead>
+
+
+
+
+
+              <tbody class="govuk-table__body">
+
+{% if data['type']%}
+{% if 'CSI' in data['type'] %}<tr class="govuk-table__row">
+                  <td class="govuk-table__cell">David Francis</td>
+                  <td class="govuk-table__cell">CSI</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>{% endif %}
+
+                {% if 'Support worker' in data['type'] %}<tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Paul Farmer</td>
+                  <td class="govuk-table__cell">Support worker</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>{% endif %}
+
+                {% if 'CSI' in data['type'] %} <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Rita Patel</td>
+                  <td class="govuk-table__cell">CSI</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>{% endif %}
+
+              {% if 'Support worker (Welsh)' in data['type'] %} <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">John Smith</td>
+                  <td class="govuk-table__cell">Support worker (Welsh)</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>{% endif %}
+
+              {% if 'Support worker (Welsh)' in data['type'] %} <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Brian Richardsons</td>
+                      <td class="govuk-table__cell">Support worker (Welsh)</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell">0</td>
+                        <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                      </tr>{% endif %}
+
+
+              {% if 'CSI' in data['type'] %} <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">John Johnson</td>
+                        <td class="govuk-table__cell">CSI</td>
+                        <td class="govuk-table__cell">0</td>
+                        <td class="govuk-table__cell">0</td>
+                        <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                      </tr>{% endif %}
+                      {% if 'CSI' in data['type'] %}<tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">David Francis</td>
+                                        <td class="govuk-table__cell">CSI</td>
+                                        <td class="govuk-table__cell">0</td>
+                                        <td class="govuk-table__cell">0</td>
+                                          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                      </tr>{% endif %}
+
+                                      {% if 'Support worker' in data['type'] %}<tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">Paul Farmer</td>
+                                        <td class="govuk-table__cell">Support worker</td>
+                                        <td class="govuk-table__cell">0</td>
+                                        <td class="govuk-table__cell">0</td>
+                                          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                      </tr>{% endif %}
+
+                                      {% if 'CSI' in data['type'] %} <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">Rita Patel</td>
+                                        <td class="govuk-table__cell">CSI</td>
+                                        <td class="govuk-table__cell">0</td>
+                                        <td class="govuk-table__cell">0</td>
+                                          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                      </tr>{% endif %}
+
+                                    {% if 'Support worker (Welsh)' in data['type'] %} <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell">John Smith</td>
+                                        <td class="govuk-table__cell">Support worker (Welsh)</td>
+                                        <td class="govuk-table__cell">0</td>
+                                        <td class="govuk-table__cell">0</td>
+                                          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                        </tr>{% endif %}
+
+                                    {% if 'Support worker (Welsh)' in data['type'] %} <tr class="govuk-table__row">
+                                            <td class="govuk-table__cell">Brian Richardsons</td>
+                                            <td class="govuk-table__cell">Support worker (Welsh)</td>
+                                            <td class="govuk-table__cell">0</td>
+                                            <td class="govuk-table__cell">0</td>
+                                              <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                            </tr>{% endif %}
+
+
+                                    {% if 'CSI' in data['type'] %} <tr class="govuk-table__row">
+                                              <td class="govuk-table__cell">John Johnson</td>
+                                              <td class="govuk-table__cell">CSI</td>
+                                              <td class="govuk-table__cell">0</td>
+                                              <td class="govuk-table__cell">0</td>
+                                              <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                                            </tr>{% endif %}
+{% else %}
+
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">David Francis</td>
+                  <td class="govuk-table__cell">CSI</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Paul Farmer</td>
+                  <td class="govuk-table__cell">Support worker</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Rita Patel</td>
+                  <td class="govuk-table__cell">CSI</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">John Smith</td>
+                  <td class="govuk-table__cell">Support worker (Welsh)</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell">0</td>
+                  <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Brian Richardsons</td>
+                    <td class="govuk-table__cell">Support worker (Welsh)</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">John Johnson</td>
+                    <td class="govuk-table__cell">CSI</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">David Francis</td>
+                    <td class="govuk-table__cell">CSI</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Paul Farmer</td>
+                    <td class="govuk-table__cell">Support worker</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Rita Patel</td>
+                    <td class="govuk-table__cell">CSI</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">John Smith</td>
+                    <td class="govuk-table__cell">Support worker (Welsh)</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell">0</td>
+                    <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                  </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">Brian Richardsons</td>
+                      <td class="govuk-table__cell">Support worker (Welsh)</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">John Johnson</td>
+                      <td class="govuk-table__cell">CSI</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell">0</td>
+                      <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="#">View details</a></td>
+                    </tr>
+
+{% endif %}
+              </tbody>
+            </table>
+         </div>
+
+
+        </div>
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-l">Tab 2</h2>
+
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+    <h2 class="govuk-heading-l">Tab 3</h2>
+
+
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+    <h2 class="govuk-heading-l">Tab 4</h2>
+
+
+  </div>
+</div>
+
+<script>
+  document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+{% endblock %}

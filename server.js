@@ -239,9 +239,9 @@ app.post('/filter/filter', function (req, res) {
 })
 
 // Clear all data in session if you open /filter/filter2
-app.post('/filter/filter#', function (req, res) {
+app.post('/filter/filter-2', function (req, res) {
   req.session.data = {}
-  res.render('filter/filter#')
+  res.render('filter/filter-2')
 })
 
 
