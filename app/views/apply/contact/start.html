@@ -1,0 +1,34 @@
+{% extends "layout-noback.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% set restart = "/" %}
+{% set releaseVersion = "v2.0.1" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-!-margin-bottom-6">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+          Access to Work</h1>
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">User research demo</h2>
+        <!-- <span class="govuk-caption-xl">{{releaseVersion}}</span> -->
+      </div>
+
+      <!-- {{releaseVersion | log }} -->
+      <p class="govuk-body govuk-!-margin-bottom-9">
+        Thank you for agreeing to take part in our usability test. Please wait here until you are asked to start.
+      </p>
+
+      <form class="form" action="/apply/contact/personal-details" method="post">
+        {{ govukButton({ text: "Start demo" }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

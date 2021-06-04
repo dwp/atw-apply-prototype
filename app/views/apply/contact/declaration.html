@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "/" %}
+
+{% block content_section %}
+
+  <form class="form" action="/apply/contact/confirmation" method="post">
+    <!-- Question -->
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">Declaration</h1>
+    </legend>
+
+    <p>By sending this application you agree that:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the information in this application is correct as far as you know</li>
+      <li>
+        you'll tell the Access to Work unit about any changes to your condition or circumstances, eg if your place of work changes
+      </li>
+      <li>
+        you agree to the
+        <a href="https://www.get-disability-work-support.service.gov.uk/apply/email-terms">email terms</a>
+      </li>
+    </ul>
+
+    {{ govukButton({ text: "I agree - send my application" }) }}
+  </form>
+
+{% endblock %}

@@ -1,6 +1,15 @@
 # Access to Work prototypes
 Handover to future Interaction designers/anyone using the prototype.
 
+## File structure
+   ### view/apply - old user application journey
+
+   ### view/coc - Change of Circumstances
+         view/coc/current - The current and most up to date version of the prototype. This is the version used for usability testing  and   linking in tickets.
+         view/coc/v# - Archived version, based on completion of sprints/dates/iterations and after usability testing.
+
+   ### view/filter - DRS filtering feature
+
 
 ## Session data
 Learned from Craig Abbott and Vicky Teinaki. Made code changes to server.js and config.js has allowed data entered into the prototype locally to be viewable real time in the terminal/command line window. This is useful to check if something is isn’t working and why.
