@@ -1,0 +1,49 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/are-you-appointee-representative.html' %}
+{% endblock %}
+
+{% set next = "" %}
+
+{% set hint = "Hint text here" %}
+
+{% block content_section %}
+
+
+
+    <!-- Radios -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <!-- Question --><p>(Content needs to be reviewed)</p>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">{% include './content/are-you-appointee-representative.html' %}</h1>
+        </legend>
+
+        <div id="appointee-representative-hint" class="govuk-hint">
+              {{hint}}
+            </div>
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="appointee-representative" name="appointee-representative" type="radio" value="Yes~/coc/current/appointee-representative/what-is-the-full-name">
+                <label class="govuk-label govuk-radios__label" for="appointee-representative">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="appointee-representative-2" name="appointee-representative" type="radio" value="No~/coc/current/myself/what-is-the-full-name">
+                <label class="govuk-label govuk-radios__label" for="appointee-representative-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

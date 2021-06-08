@@ -1,0 +1,39 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/what-is-the-address.html' %}
+{% endblock %}
+
+{% set next = "" %}
+
+{% set hint = "For example, 27 3 2007" %}
+
+{% block content_section %}
+
+
+
+    <!-- date -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <!-- Question --><p>(Content needs to be reviewed)</p>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+          {% include './content/what-is-the-address.html' %}  </h1>
+        </legend>
+
+
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code"></div>
+
+
+              </fieldset>
+            </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Find address" }) }}
+  </form>
+
+{% endblock %}

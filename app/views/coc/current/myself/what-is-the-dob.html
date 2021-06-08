@@ -1,0 +1,58 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/what-is-the-dob.html' %}
+{% endblock %}
+
+{% set next = "what-is-the-address" %}
+
+{% set hint = "For example, 27 3 2007" %}
+
+{% block content_section %}
+
+
+
+    <!-- date -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <!-- Question --><p>(Content needs to be reviewed)</p>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+          {% include './content/what-is-the-dob.html' %}  </h1>
+        </legend>
+
+        <div id="myself-dob-hint" class="govuk-hint">
+              {{hint}}
+            </div>
+            <div class="govuk-date-input" id="myself-dob">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="myself-dob-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="myself-dob-day" name="myself-dob-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="myself-dob-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="myself-dob-month" name="myself-dob-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="myself-dob-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="myself-dob-year" name="myself-dob-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+                  </div>
+                </div>
+
+              </fieldset>
+            </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}
