@@ -1,0 +1,49 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/do-you-know-urn.html' %}
+{% endblock %}
+
+{% set next = "" %}
+
+{% set hint = "It's a 9 numbers long and begins with a 100, for example 100456789." %}
+
+{% block content_section %}
+
+
+
+    <!-- Radios -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <!-- Question --><p>(Content needs to be reviewed)</p>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">{% include './content/do-you-know-urn.html' %}</h1>
+        </legend>
+
+        <div id="do-you-know-urn-hint" class="govuk-hint">
+              {{hint}}
+            </div>
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="do-you-know-urn" name="do-you-know-urn" type="radio" value="Yes~/coc/current/what-is-the-urn">
+                <label class="govuk-label govuk-radios__label" for="do-you-know-urn">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="do-you-know-urn-2" name="do-you-know-urn" type="radio" value="No~/coc/current/what-is-the-full-name">
+                <label class="govuk-label govuk-radios__label" for="do-you-know-urn-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}
