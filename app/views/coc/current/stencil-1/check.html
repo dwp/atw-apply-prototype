@@ -1,0 +1,167 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/check.html' %}
+{% endblock %}
+
+
+{% set next = "" %}
+{% set hint = "" %}
+
+{% block content_section %}
+
+
+
+        <h1 class="govuk-heading-l">{% include './content/check.html' %} </h1>
+<p>(Content needs to be reviewed)</p>
+
+<h2 class="govuk-heading-m">Personal details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+{% include './content/change-options.html' %}
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% for feature in data['change'] %}
+                <li>{{ feature }}</li>
+              {% else %}
+                <li>No features selected</li>
+              {% endfor %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="change-options">
+                Change<span class="govuk-visually-hidden">  </span>
+              </a>
+            </dd>
+          </div>
+
+
+
+
+
+          {% if 'Contact details' in data['change'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+    What are you new contact details?
+            </dt>
+            <dd class="govuk-summary-list__value">
+{{data['contact-by-email']}}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden">  </span>
+              </a>
+            </dd>
+          </div>
+{% endif %}
+
+
+
+{% if 'Home address' in data['change'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+{% include './content/address.html' %}
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{data['address-postcode']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="#">
+      Change<span class="govuk-visually-hidden">  </span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+{% include './content/list-address.html' %}
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{data['where-do-you-live']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="#">
+      Change<span class="govuk-visually-hidden">  </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+
+{% if 'Bank details' in data['change'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+{% include './content/bank-details.html' %}
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{data['sort-code']}}<br>
+{{data['account-number']}}<br>
+{{data['roll-number']}}
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="#">
+      Change<span class="govuk-visually-hidden">  </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+
+{% if 'Something else' in data['change'] %}
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+{% include './content/something-else.html' %}
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{data['with-hint']}}
+
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="#">
+      Change<span class="govuk-visually-hidden">  </span>
+    </a>
+  </dd>
+</div>
+{% endif %}
+
+
+</dl>
+
+        <h2 class="govuk-heading-m">Application details</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+{% include './content/urgent.html' %}
+  </dt>
+  <dd class="govuk-summary-list__value">
+{{data['urgent']}}
+
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="#">
+      Change<span class="govuk-visually-hidden">  </span>
+    </a>
+  </dd>
+</div>
+
+
+        </dl>
+
+
+
+        <h2 class="govuk-heading-m">Ask the citizen</h2>
+
+        <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+
+
+
+
+
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Accept and send to ATWIS" }) }}
+  </form>
+
+{% endblock %}

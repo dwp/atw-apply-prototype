@@ -1,0 +1,32 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/do-you-know-urn.html' %}
+{% endblock %}
+
+{% set next = "" %}
+
+{% set hint = "It's a 9 numbers long and begins with a 100, for example 100456789." %}
+
+{% block content_section %}
+
+
+
+    <!-- Radios -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <!-- Question --><p>(Content needs to be reviewed)</p>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">Go to DISC</h1>
+        </legend>
+
+
+
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

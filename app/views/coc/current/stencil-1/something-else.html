@@ -1,0 +1,44 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/changes.html' %}
+{% endblock %}
+
+{% set next = "" %}
+
+{% set hint = "" %}
+
+{% block content_section %}
+
+
+
+
+<div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+<div class="govuk-form-group">
+<h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="with-hint">
+    {% include './content/something-else.html' %}
+  </label>
+</h1>
+<div id="with-hint-hint" class="govuk-hint">
+  Do not include {list from checkbox}
+</div>
+<textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+</div>
+
+<div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+You can enter up to 200 characters
+</div>
+
+</div>
+
+
+
+
+
+
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

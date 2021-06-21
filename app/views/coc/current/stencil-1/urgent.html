@@ -1,0 +1,49 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/urgent.html' %}
+{% endblock %}
+
+{% set next = "check" %}
+
+{% set hint = "" %}
+
+{% block content_section %}
+
+
+
+    <!-- text input -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <!-- Question --><p>(Content needs to be reviewed)</p>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading"><label class="govuk-label govuk-label--l" for="urn">
+          {% include './content/urgent.html' %}  </label></h1>
+        </legend>
+
+        <div id="urgent-hint" class="govuk-hint">
+              {{hint}}
+            </div>
+
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="urgent" name="urgent" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="urgent">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="urgent-2" name="urgent" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="urgent-2">
+                  No
+                </label>
+              </div>
+            </div>
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

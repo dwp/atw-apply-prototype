@@ -1,12 +1,12 @@
 {% extends "layout_coc.html" %}
 
 {% block pageTitle %}
-{% include './content/what-is-the-full-name.html' %}
+{% include './content/what-is-the-urn.html' %}
 {% endblock %}
 
-{% set next = "what-is-the-dob" %}
+{% set next = "Change-options" %}
 
-{% set hint = "Hint here" %}
+{% set hint = "It's a 9 numbers long and begins with a 100, for example 100456789." %}
 
 {% block content_section %}
 
@@ -17,22 +17,17 @@
       <fieldset class="govuk-fieldset">
         <!-- Question --><p>(Content needs to be reviewed)</p>
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-          {% include './content/what-is-the-full-name.html' %}  </h1>
+          <h1 class="govuk-fieldset__heading"><label class="govuk-label govuk-label--l" for="urn">
+          {% include './content/what-is-the-urn.html' %}  </label></h1>
         </legend>
 
         <div id="do-you-know-urn-hint" class="govuk-hint">
               {{hint}}
             </div>
 
-            <div class="govuk-form-group">
-  <label class="govuk-label" for="full-name-claimant">
-    Full name
-  </label>
-  <input class="govuk-input" id="full-name-claimant" name="full-name-claimant" type="text" spellcheck="false" autocomplete="name"></div>
-   
-    </div>
-        </div>
+            <input class="govuk-input" id="urn" name="urn" type="text" value="{{urn}}">
+            </div>
+          </div>
       </fieldset>
     </div>
     <!-- Question END -->

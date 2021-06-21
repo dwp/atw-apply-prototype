@@ -1,12 +1,12 @@
 {% extends "layout_coc.html" %}
 
 {% block pageTitle %}
-{% include './content/do-you-know-urn.html' %}
+{% include './content/landingpage.html' %}
 {% endblock %}
 
 {% set next = "" %}
 
-{% set hint = "You'll find this on any correspondence we've sent you about the grant. It's a 9 numbers long and begins with a 1, for example 123456789." %}
+{% set hint = "  Name, contact details, person who co-signs any claims and Change to condition or circumstances will not affect the grant" %}
 
 {% block content_section %}
 
@@ -17,22 +17,22 @@
       <fieldset class="govuk-fieldset">
         <!-- Question --><p>(Content needs to be reviewed)</p>
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">{% include './content/do-you-know-urn.html' %}</h1>
+          <h1 class="govuk-fieldset__heading">{% include './content/landingpage.html' %}</h1>
         </legend>
 
         <div id="do-you-know-urn-hint" class="govuk-hint">
-              {{hint}}
+            {{hint}}
             </div>
 
             <div class="govuk-radios govuk-radios--inline">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="do-you-know-urn" name="do-you-know-urn" type="radio" value="Yes~/coc/current/what-is-the-urn">
+                <input class="govuk-radios__input" id="do-you-know-urn" name="do-you-know-urn" type="radio" value="Yes~/coc/current/stencil-1/change-options">
                 <label class="govuk-label govuk-radios__label" for="do-you-know-urn">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="do-you-know-urn-2" name="do-you-know-urn" type="radio" value="No~/coc/current/what-is-the-full-name">
+                <input class="govuk-radios__input" id="do-you-know-urn-2" name="do-you-know-urn" type="radio" value="No~/coc/current/stencil-1/info">
                 <label class="govuk-label govuk-radios__label" for="do-you-know-urn-2">
                   No
                 </label>

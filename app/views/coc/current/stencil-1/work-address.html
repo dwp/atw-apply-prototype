@@ -1,0 +1,39 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/changes.html' %}
+{% endblock %}
+
+
+{% set next = "" %}
+
+{% set hint = "" %}
+
+{% block content_section %}
+
+
+
+
+<fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+<h1 class="govuk-fieldset__heading">
+  What is the new work address?
+</h1>
+</legend>
+
+
+<div class="govuk-form-group">
+<label class="govuk-label" for="address-postcode">
+  Postcode
+</label>
+<input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code"></div>
+
+</fieldset>
+
+
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Find address" }) }}
+  </form>
+
+{% endblock %}

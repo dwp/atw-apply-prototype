@@ -4,7 +4,7 @@ const radioButtonRedirect = require('radio-button-redirect')
 router.use(radioButtonRedirect)
 
 // Add your routes here - above the module.exports line
-
+require('./views/coc/current/stencil-1/_routes.js')(router);
 
 /* === Main journey routes === */
 

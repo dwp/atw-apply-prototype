@@ -1,0 +1,88 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/changes.html' %}
+{% endblock %}
+
+
+{% set next = "" %}
+{% set hint = "" %}
+
+{% block content_section %}
+
+
+
+
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <!-- Question --><p>(Content needs to be reviewed)</p>
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">What is the new full name?</h1>
+      </legend>
+
+      <div id="changes-hint" class="govuk-hint">
+            {{hint}}
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="f-firstName">
+                  First name
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="f-firstName" name="firstName" type="text" value="{{ data['firstName']}}">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="f-lastName">
+                  Last name
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="f-lastName" name="lastName" type="text" value="{{data['lastName']}}"/>
+              </div>
+            </fieldset>
+          </div>
+
+
+          <!-- <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-checkboxes__label" for="contact">
+                First name
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false"></div>
+
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+                Last name
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-phone">
+
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel"></div> -->
+
+
+        </fieldset>
+      </div>
+
+
+
+
+
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

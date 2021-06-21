@@ -1,0 +1,141 @@
+{% extends "layout_coc.html" %}
+
+{% block pageTitle %}
+{% include './content/change-options.html' %}
+{% endblock %}
+
+{% set next = "" %}
+
+{% set hint = "Select all that apply." %}
+
+{% block content_section %}
+
+
+
+    <!-- checkbox -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <!-- Question --><p>(Content needs to be reviewed)</p>
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">{% include './content/change-options.html' %}</h1>
+        </legend>
+
+        <div class="govuk-inset-text">
+          Notes for the telephony. 
+        </div>
+
+        <div id="do-you-know-urn-hint" class="govuk-hint">
+              {{hint}}
+            </div>
+
+
+            <div class="govuk-checkboxes">
+                  <!-- <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change" name="change" type="checkbox" value="Name">
+                    <label class="govuk-label govuk-checkboxes__label" for="change">
+                      Name
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-2" name="change" type="checkbox" value="Contact details">
+                    <label class="govuk-label govuk-checkboxes__label" for="change-2">
+                      Contact details
+                    </label>
+                  </div> -->
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-3" name="change" type="checkbox" value="Home address" {{ checked("change", "Home address") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-3">
+                      Home address
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-4" name="change" type="checkbox" value="Work address" {{ checked("change", "Work address") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-4">
+                      Work address
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-5" name="change" type="checkbox" value="Bank details" {{ checked("change", "Bank details") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-5">
+                      Bank details
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-6" name="change" type="checkbox" value="Job role and responsibilites" {{ checked("change", "Job role and responsibilites") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-6">
+                      Job role and responsibilites
+                    </label>
+                  </div>
+                  <!-- <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-7" name="change" type="checkbox" value="Person who co-signs any claims">
+                    <label class="govuk-label govuk-checkboxes__label" for="change-7">
+                      Person who co-signs any claims
+                    </label>
+                  </div> -->
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-8" name="change" type="checkbox" value="New supplier of services" {{ checked("change", "New supplier of services") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-8">
+                      New supplier of services
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-9" name="change" type="checkbox" value="Price increase of services" {{ checked("change", "Price increase of services") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-9">
+                      Price increase of services
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-10" name="change" type="checkbox" value="Additional support needs" {{ checked("change", "Additional support needs") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-10">
+                      Additional support needs
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-11" name="change" type="checkbox" value="More or different ways of travelling to work" {{ checked("change", "More or different ways of travelling to work") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-11">
+                      More or different ways of travelling to work
+                    </label>
+                  </div>
+
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-12" name="change" type="checkbox" value="Ending support from Access to Work" {{ checked("change", "Ending support from Access to Work") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-12">
+                      Ending support from Access to Work
+                    </label>
+                  </div>
+                  <!-- <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-13" name="change" type="checkbox" value="Change to condition or circumstances">
+                    <label class="govuk-label govuk-checkboxes__label" for="change-13">
+                      Change to condition or circumstances
+                    </label>
+                  </div> -->
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-14" name="change" type="checkbox" value="Something else" {{ checked("change", "Something else") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="change-14">
+                      Something else
+                    </label>
+                    <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+        For example unexpected charge
+      </div>
+                  </div>
+
+                  <!-- <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="change-15" name="change" type="checkbox" value="Supporting notes">
+                    <label class="govuk-label govuk-checkboxes__label" for="change-15">
+                      Supporting notes
+                    </label>
+                  </div> -->
+                </div>
+
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+
+
+{% endblock %}
