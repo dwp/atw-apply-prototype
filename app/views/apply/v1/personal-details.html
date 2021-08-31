@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "start" %}
+{% set backto = "work-contact" %}
+
+{% block content_section %}
+
+  <!-- Form START -->
+  <form class="form" action="any-these-apply" method="post">
+
+    <div class="govuk-form-group">
+
+      <fieldset class="govuk-fieldset">
+        <!-- Question -->
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">About you</h1>
+        </legend>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="f-firstName">
+                First name
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="f-firstName" name="firstName" type="text" value="{{ data['firstname'] }}">
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="f-lastName">
+                Last name
+              </label>
+              <input class="govuk-input govuk-!-width-one-half" id="f-lastName" name="lastName" type="text" value="{{ data['lastname'] }}"/>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+            <legend class="govuk-fieldset__legend">Date of birth</legend>
+            <div id="dob-hint" class="govuk-hint">
+              For example, 31 3 1980
+            </div>
+            <div class="govuk-date-input" id="dob">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="f-dob-dd">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="f-dob-dd" name="dob-dd" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-dd'] }}"/>
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="f-dob-mm">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-mm" name="dob-mm" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-mm'] }}"/>
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="f-dob-yyyy">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="f-dob-yyyy" name="dob-yyyy" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['dob-yyyy'] }}"/>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset apply-address">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Address
+            </legend>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-1">
+                Building and street
+                <span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"/>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-line-2">
+                <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+              </label>
+              <input class="govuk-input" id="address-line-2" name="address-line-2" type="text"/>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-town">
+                Town or city
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text"/>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-county">
+                County
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text"/>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address-postcode">
+                Postcode
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text"/>
+            </div>
+          </fieldset>
+        </div>
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}
