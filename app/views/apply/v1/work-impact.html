@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "start" %}
+
+{% block content_section %}
+
+  <!-- Form START -->
+  <form class="form" action="work-impact-answer" method="post">
+
+    <!-- Form group START -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+        <!-- Question -->
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">Does your condition make it harder for you to do your job?</h1>
+        </legend>
+
+        <!-- Conditional choice START -->
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+          <!-- Option 1-->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="f-jobHarder" name="jobHarder" type="radio" value="yes" ​="​" {{
+                checked( "jobHarder" , "yes" ) }} data-aria-controls="conditional-work-impact">
+            <label class="govuk-label govuk-radios__label" for="jobHarder">
+              Yes
+            </label>
+          </div>
+
+          <!-- Option 1 options -->
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-impact">
+
+            <div class="govuk-form-group">
+              <div class="govuk-form-group">
+                <p class="govuk-body">Tell us how it is harder</p>
+
+                <!-- Text input -->
+                <textarea class="govuk-textarea" id="more-detail" name="harderHow" rows="5" aria-describedby="more-detail-hint">{{ data['harderHow'] }}</textarea>
+              </div>
+            </div>
+
+            <!-- Conditional choice 2 START -->
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="work-impact-solution">
+
+                <div class="govuk-form-group">
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                    <!-- Question -->
+                    <legend class="govuk-fieldset__legend">
+                      Do you do anything to get around these problems at the moment?
+                    </legend>
+
+                    <!-- Option 1-->
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="work-impact-solution" name="getAroundProblems" type="radio" value="yes" ​="​" {{ checked( "getAroundProblems" , "yes" ) }} data-aria-controls="conditional-work-impact-solution">
+                      <label class="govuk-label govuk-radios__label" for="changed-name">
+                        Yes
+                      </label>
+                    </div>
+
+                    <!-- Option 1 options -->
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-impact-solution">
+
+                      <div class="govuk-form-group">
+                        <div class="govuk-form-group">
+                          <p class="govuk-body">Tell us what you do</p>
+
+                          <!-- Text input -->
+                          <textarea class="govuk-textarea" id="work-impact-solution-detail" name="problemSolutions" rows="5" aria-describedby="work-impact-solution-detail-hint">{{ data['problemSolutions'] }}</textarea>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Option 2-->
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="work-impact-solution-2" name="getAroundProblems" type="radio" value="no" ​="​" {{ checked( "getAroundProblems" , "no" ) }}>
+                      <label class="govuk-label govuk-radios__label" for="work-impact-solution-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+
+                </fieldset>
+              </div>
+              <!-- Conditional choice 2 END -->
+
+              <!-- Conditional choice 3 START -->
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="work-impact-help">
+
+                  <div class="govuk-form-group">
+                    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+                      <!-- Question -->
+                      <legend class="govuk-fieldset__legend">
+                        Do you know what you need to help you with this?
+                      </legend>
+
+                      <!-- Option 1-->
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="work-impact-help" name="knowWhatWouldHelp" type="radio" value="yes" ​="​" {{ checked( "knowWhatWouldHelp" , "yes" ) }} data-aria-controls="conditional-work-impact-help">
+                        <label class="govuk-label govuk-radios__label" for="work-impact-help">
+                          Yes
+                        </label>
+                      </div>
+
+                      <!-- Option 1 options -->
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-impact-help">
+
+                        <div class="govuk-form-group">
+                          <div class="govuk-form-group">
+                            <p class="govuk-body">Tell us what would hep you</p>
+
+                            <!-- Text input -->
+                            <textarea class="govuk-textarea" id="work-impact-help-detail" name="whatWouldHelp" rows="5" aria-describedby="work-impact-help-detail-hint">{{ data['whatWouldHelp'] }}</textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Option 2-->
+                      <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="work-impact-help-2" name="knowWhatWouldHelp" type="radio" value="no" ​="​" {{ checked( "knowWhatWouldHelp" , "no" ) }}>
+                        <label class="govuk-label govuk-radios__label" for="work-impact-help-2">
+                          No
+                        </label>
+                      </div>
+                    </div>
+
+                  </fieldset>
+                </div>
+                <!-- Conditional choice 3 END -->
+
+              </div>
+
+              <!-- Option 2-->
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="jobHarder-2" name="jobHarder" type="radio" value="no" ​="​" {{
+                checked( "jobHarder" , "no" ) }}>
+                <label class="govuk-label govuk-radios__label" for="jobHarder-2">
+                  No
+                </label>
+              </div>
+            </div>
+            <!-- Conditional choice END -->
+
+          </fieldset>
+        </div>
+        <!-- Form group END -->
+
+        {{ govukButton({ text: "Continue" }) }}
+
+      </form>
+      <!-- Form END -->
+
+    {% endblock %}

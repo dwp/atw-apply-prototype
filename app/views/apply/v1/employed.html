@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "start" %}
+{% set backto = "job-status" %}
+
+{% block content_section %}
+
+  <!-- Form START -->
+  <form class="form" action="work" method="post">
+    <!-- Radios -->
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <!-- Question -->
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">Where you work</h1>
+        </legend>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="f-jobTitle">
+            Your job title
+          </label>
+          <input class="govuk-input" id="f-jobTitle" name="jobTitle" type="text" value="{{ data['jobTitle'] }}"/>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="f-employer">
+            Your employer
+          </label>
+          <input class="govuk-input" id="f-employer" name="employer" type="text" value="{{ data['employer'] }}"/>
+        </div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset apply-address">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Address
+            </legend>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="f-address-1">
+                Building and street
+                <span class="govuk-visually-hidden">line 1 of 2</span>
+              </label>
+              <input class="govuk-input" id="f-address-1" name="address-1" type="text" value="{{ data['address-1'] }}"/>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="f-address-2">
+                <span class="govuk-visually-hidden">Building and street line 2 of 2</span >
+              </label>
+              <input class="govuk-input" id="f-address-2" name="address-2" type="text" value="{{ data['address-2'] }}"/>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="f-address-3">
+                Town or city
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="f-address-3" name="address-3" type="text" value="{{ data['address-3'] }}"/>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="f-address-4">
+                County
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="f-address-4" name="address-4" type="text" value="{{ data['address-4'] }}"/>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="f-address-postcode">
+                Postcode
+              </label>
+              <input class="govuk-input govuk-input--width-10" id="f-address-postcode" name="address-postcode" type="text" value="{{ data['address-postcode'] }}"/>
+            </div>
+          </fieldset>
+        </div>
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

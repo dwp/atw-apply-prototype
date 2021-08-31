@@ -1,0 +1,15 @@
+
+{% if 'email' and 'phone-call' in data['contactPrefs'] %}
+We've sent a confirmation text message to xxxx xxx xxx.
+{% else %}
+
+
+{% if 'email' and not 'phone-call' in data['contactPrefs'] %}
+We have sent a confirmation email to test@test.com.
+{% endif %}
+
+{% if 'phone-call' and not 'email' in data['contactPrefs'] %}
+We've sent a confirmation text message to xxxx xxx xxx.
+{% endif %}
+
+{% endif %}

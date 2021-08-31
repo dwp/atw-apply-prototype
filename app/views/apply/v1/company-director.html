@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "start" %}
+{% set backto = "job-status" %}
+
+{% block content_section %}
+
+  <!-- Form START -->
+  <form class="form" action="work" method="post">
+
+    <div class="govuk-form-group">
+
+      <fieldset class="govuk-fieldset">
+
+        <!-- Question -->
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">Where you work</h1>
+        </legend>
+
+        <!-- Your job title -->
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="f-companyName">
+            Your company name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="f-companyName" name="companyName" type="text" value="{{ data['companyName'] }}"/>
+        </div>
+
+        <!-- Radios -->
+        <div class="govuk-form-group">
+
+          <!-- Conditional choice START -->
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+            <!-- Question -->
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Is your company address different to your home address?
+            </legend>
+
+            <!-- Option 1-->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="f-homeAddressDifferent" name="homeAddressDifferent" type="radio" value="yes" ​="​" {{
+                checked( "homeAddressDifferent" , "yes" ) }} data-aria-controls="conditional-f-homeAddressDifferent">
+              <label class="govuk-label govuk-radios__label" for="f-homeAddressDifferent">
+                Yes
+              </label>
+            </div>
+
+            <!-- Option 1 options -->
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-f-homeAddressDifferent">
+              <fieldset class="govuk-fieldset apply-address">
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="f-address[address1]">
+                    Building and street
+                    <span class="govuk-visually-hidden">line 1 of 2</span>
+                  </label>
+                  <input class="govuk-input" id="f-address[address1]" name="address[address1]" type="text" value="{{ data['address[address1]'] }}"/>
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="f-address[address2]">
+                    <span class="govuk-visually-hidden">Building and street line 2 of 2</span >
+                  </label>
+                  <input class="govuk-input" id="f-address[address2]" name="address[address2]" type="text" value="{{ data['address[address2]'] }}"/>
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="f-address[address3]">
+                    Town or city
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="f-address[address3]" name="address[address3]" type="text" value="{{ data['address[address3]'] }}"/>
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="f-address[address4]">
+                    County
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="f-address[address4]" name="address[address4]" type="text" value="{{ data['address[address4]'] }}"/>
+                </div>
+
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="f-address[postcode]">
+                    Postcode
+                  </label>
+                  <input class="govuk-input govuk-input--width-10" id="f-address[postcode]" name="address[postcode]" type="text" value="{{ data['address[postcode]'] }}"/>
+                </div>
+              </fieldset>
+            </div>
+
+            <!-- Option 2-->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="homeAddressDifferent-2" name="homeAddressDifferent" type="radio" value="no" ​="​" {{
+                checked( "homeAddressDifferent" , "no" ) }}>
+              <label class="govuk-label govuk-radios__label" for="homeAddressDifferent-2">
+                No
+              </label>
+            </div>
+          </div>
+          <!-- Conditional choice END -->
+
+        </div>
+        <!-- Question END -->
+
+      </fieldset>
+    </div>
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

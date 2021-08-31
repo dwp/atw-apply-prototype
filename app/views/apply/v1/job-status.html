@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "start" %}
+{% set backto = "work-impact" %}
+
+{% block content_section %}
+
+  <!-- Form START -->
+  <form class="form" action="job-status-answer" method="post">
+
+    <div class="govuk-form-group">
+
+      <fieldset class="govuk-fieldset" aria-describedby="job-status-hint">
+
+        <!-- Question -->
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">Your employment status</h1>
+        </legend>
+
+        <div class="govuk-radios">
+
+          <!-- Option 1 -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="f-howEmployed" name="howEmployed" type="radio" value="employed" {{ checked(
+              "howEmployed", "employed" ) }}>
+            <label class="govuk-label govuk-radios__label" for="howEmployed">
+              Employed
+            </label>
+          </div>
+
+          <!-- Option 2 -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="howEmployed-2" name="howEmployed" type="radio" value="selfEmployed" {{ checked(
+              "howEmployed", "selfEmployed" ) }}>
+            <label class="govuk-label govuk-radios__label" for="howEmployed-2">
+              Self-employed
+            </label>
+          </div>
+
+          <!-- Option 3 -->
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="howEmployed-3" name="howEmployed" type="radio" value="director" {{ checked(
+              "howEmployed", "director" ) }}>
+            <label class="govuk-label govuk-radios__label" for="howEmployed-3">
+              Director of a limited company
+            </label>
+          </div>
+
+        </div>
+      </fieldset>
+    </div>
+    <!-- Question END -->
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I have a job but I haven't started it yet
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        You can still apply. Select the status that will apply to you.
+      </div>
+    </details>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I’m not sure if my work counts as being employed
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>
+          Select 'Employed' if you’re on or about to start an apprenticeship, work trial, work experience, internship or 'Permitted Work'.
+        </p>
+        <p>
+          You can't apply for Access to Work if you’re doing voluntary work.
+        </p>
+      </div>
+    </details>
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}

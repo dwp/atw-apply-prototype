@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Question page
+{% endblock %}
+
+{% set restart = "start" %}
+{% set backto = "start" %}
+
+{% block content_section %}
+
+  <form class="form" action="help-with-travel" method="post">
+    <!-- Question -->
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What are your conditions or disabilities?
+      </h1>
+    </legend>
+
+    <div class="govuk-form-group">
+      <!-- Text input -->
+      <input class="govuk-input" id="f-description" name="description" type="text" value="{{ data['description'] }}"/>
+    </div>
+    <!-- Question END -->
+
+    {{ govukButton({ text: "Continue" }) }}
+  </form>
+
+{% endblock %}
