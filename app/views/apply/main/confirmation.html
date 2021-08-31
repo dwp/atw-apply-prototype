@@ -16,9 +16,14 @@
 
   <p>
 
+
+{% if data['contact']=='Someone else, who can speak for you'%}
+We've sent a confirmation text message to xxxx xxx xxx.
+{% else %}
+
 {% if not data['contactPrefs']%}We've sent a confirmation text message to xxxx xxx xxx.{% else %}
   {% include "./confirmation-contact.html" %}{% endif %}
-
+{% endif %}
 
 
 
