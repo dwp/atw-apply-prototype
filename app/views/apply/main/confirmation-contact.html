@@ -1,6 +1,6 @@
 
 {% if 'email' and 'phone-call' in data['contactPrefs'] %}
-We've sent a confirmation text message to xxxx xxx xxx.
+We have sent a confirmation email to test@test.com.
 {% else %}
 
 
@@ -9,7 +9,7 @@ We have sent a confirmation email to test@test.com.
 {% endif %}
 
 {% if 'phone-call' and not 'email' in data['contactPrefs'] %}
-We've sent a confirmation text message to xxxx xxx xxx.
+We have sent a confirmation text message to xxxxx xxx xxx.
 {% endif %}
 
 {% endif %}
